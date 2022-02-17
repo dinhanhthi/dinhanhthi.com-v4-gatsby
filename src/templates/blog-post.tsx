@@ -2,8 +2,8 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Base from '../layouts/base';
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -11,7 +11,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const { previous, next } = data
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Base location={location} title={siteTitle}>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -60,7 +60,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
-    </Layout>
+    </Base>
   )
 }
 

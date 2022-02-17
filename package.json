@@ -17,6 +17,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "gatsby": "^4.6.2",
     "gatsby-plugin-feed": "^4.6.0",
     "gatsby-plugin-gatsby-cloud": "^4.6.0",

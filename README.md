@@ -16,11 +16,15 @@ gatsby develop
 gatsby build
 ```
 
+```bash
+npm install @react-icons/all-files --save
+```
+
 ## TailwindCSS
 
 👉 [Official guide](https://tailwindcss.com/docs/guides/gatsby).
 
-## eslint
+## eslint + ts
 
 👉 [Official guide](https://www.gatsbyjs.com/docs/how-to/custom-configuration/eslint/).
 
@@ -35,5 +39,6 @@ touch tsconfig.json
 # Content like it is now.
 ```
 
-## typescript
+## Custom CSS?
 
+Just add them to `src/main.scss`.
