@@ -6,7 +6,8 @@ import { MdOutlineCloseFullscreen } from 'react-icons/md'
 import { FaHamburger, FaGithub } from 'react-icons/fa'
 import { FiSearch } from 'react-icons/fi'
 import AvatarEmoji from '../images/avatar_memoji.webp'
-import { navigation, author } from '../data/config'
+import { author } from '../data/config'
+import navigation from '../data/navigation'
 
 const textClass =
   'text-gray-300 md:text-gray-300 md:bg-transparent md:hover:text-white md:hover:bg-gray-700'

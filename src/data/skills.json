@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Languages",
+    "list": ["freefempp", "js", "matlab", "php", "python", "ts"]
+  },
+  {
+    "name": "AI & Data",
+    "list": ["jupyter", "pytorch", "scikit-learn", "tensorflow"]
+  },
+  {
+    "name": "Frontend",
+    "list": [
+      "angular",
+      "bootstrap",
+      "eleventy",
+      "gatsby",
+      "html5",
+      "jekyll",
+      "liquid",
+      "nunjucks",
+      "react",
+      "rxjs",
+      "scss",
+      "tailwindcss",
+      "wordpress"
+    ]
+  },
+  {
+    "name": "Backend",
+    "list": [
+      "airflow",
+      "docker",
+      "firebase",
+      "graphql",
+      "grpc",
+      "google-nodejs-api",
+      "jestjs",
+      "mongodb",
+      "mysql",
+      "nestjs",
+      "nodejs"
+    ]
+  },
+  {
+    "name": "Tools",
+    "list": ["bash", "git", "gitkraken", "latex", "linux", "postman", "sphinx", "vscode"]
+  }
+]
