@@ -1,12 +1,12 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import * as React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Bio from "../components/bio"
-import Base from "../layouts/base"
-import Seo from "../components/seo"
+import Bio from '../components/bio'
+import Base from '../layouts/base'
+import Seo from '../components/seo'
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata?.title || 'Title'
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -27,7 +27,7 @@ const BlogIndex = ({ data, location }) => {
     <Base location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <ol style={{ listStyle: 'none' }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
