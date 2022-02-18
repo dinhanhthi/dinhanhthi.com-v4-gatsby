@@ -17,7 +17,8 @@ gatsby build
 ```
 
 ```bash
-npm install @react-icons/all-files --save
+# Note that: @react-icons/all-files lacks some icons
+npm install react-icons --save
 ```
 
 ## TailwindCSS
@@ -42,3 +43,7 @@ touch tsconfig.json
 ## Custom CSS?
 
 Just add them to `src/main.scss`.
+
+## References
+
+- [Working with images in Gatsby](https://dnlytras.com/blog/gatsby-images/)

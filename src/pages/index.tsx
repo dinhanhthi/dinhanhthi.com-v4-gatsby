@@ -1,17 +1,16 @@
+// import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
-
 import Bio from '../components/bio'
-import Base from '../layouts/base'
 import Seo from '../components/seo'
+import Base from '../layouts/base'
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || 'Title'
+const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
     return (
-      <Base location={location} title={siteTitle}>
+      <Base>
         <Seo title="All posts" />
         <Bio />
         <p>
@@ -24,9 +23,9 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Base location={location} title={siteTitle}>
+    <Base>
       <Seo title="All posts" />
-      <Bio />
+      {/* <Bio />
       <ol style={{ listStyle: 'none' }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -58,7 +57,7 @@ const BlogIndex = ({ data, location }) => {
             </li>
           )
         })}
-      </ol>
+      </ol> */}
     </Base>
   )
 }
