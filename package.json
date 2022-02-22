@@ -9,10 +9,10 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "dev": "gatsby develop",
+    "develop": "gatsby develop --port 5555",
+    "dev": "gatsby develop --port 5555",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "reinstall": "gatsby clean && rm -rf node_modules && rm package-lock.json && npm i",
+    "reinstall": "gatsby clean && rm -rf node_modules && rm package-lock.json && npm i && npm link eslint",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -21,7 +21,6 @@
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
     "gatsby": "^4.6.2",
-    "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^4.6.0",
     "gatsby-plugin-gatsby-cloud": "^4.6.0",
     "gatsby-plugin-google-analytics": "^4.6.0",

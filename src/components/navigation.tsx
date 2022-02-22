@@ -9,12 +9,13 @@ import EnFlag from '../img/lang/en.svg'
 import FrFlag from '../img/lang/fr.svg'
 import { author } from '../data/settings'
 import navigation from '../data/navs'
-import ThemeToggle from './themeToggle'
 
-import { RiMoonFill } from 'react-icons/ri'
+import { RiMoonFill, RiSunFill } from 'react-icons/ri'
 import { MdOutlineCloseFullscreen } from 'react-icons/md'
 import { FaHamburger, FaGithub } from 'react-icons/fa'
 import { FiSearch } from 'react-icons/fi'
+import { SiteTheme } from '../types/types'
+import { toggleThemeTransition } from '../layouts/base'
 
 const textClass = cntl`
   md:hover:bg-slate-100 md:hover:text-sky-900 text-slate-700 dark:md:text-gray-300
@@ -23,7 +24,7 @@ const textClass = cntl`
 const iconSizeClass = 'w-6 h-6'
 const groupSpaceClass = 'ml-2 md:ml-4'
 export const navHeightClass = 'h-14'
-const navClasses = 'bg-white dark:bg-gray-800'
+const navClasses = `bg-white dark:bg-gray-800 ${toggleThemeTransition}`
 
 const langMenus = [
   {
@@ -43,7 +44,13 @@ const langMenus = [
   },
 ]
 
-export default function Navigation() {
+export default function Navigation({
+  theme,
+  onUpdateTheme,
+}: {
+  theme: SiteTheme
+  onUpdateTheme: any
+}) {
   return (
     <div className={`fixed top-0 left-0 z-50 w-full ${navClasses}`}>
       <div className="container mx-auto flex flex-wrap items-center justify-items-stretch">
@@ -138,10 +145,15 @@ export default function Navigation() {
                     {LangMenuRender()}
                     <button
                       className={`rounded-lg p-2 ${textClass} focus:outline-none`}
+                      onClick={onUpdateTheme}
                     >
-                      <RiMoonFill className={iconSizeClass} />
+                      {theme === 'light' && (
+                        <RiMoonFill className={iconSizeClass} />
+                      )}
+                      {theme === 'dark' && (
+                        <RiSunFill className={iconSizeClass} />
+                      )}
                     </button>
-                    <ThemeToggle />
                     <a
                       className={`hidden rounded-lg p-2 sm:block ${textClass} focus:outline-none
                       `}

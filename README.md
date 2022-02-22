@@ -4,8 +4,8 @@ Version 5 of dinhanhthi.com using GatbsyJS &amp; TailwindCSS.
 
 ```bash
 gatsby develop # or `npm run dev`
-# http://localhost:8000/
-# http://localhost:8000/___graphql
+# http://localhost:5555/
+# http://localhost:5555/___graphql
 
 # For a production build
 gatsby build

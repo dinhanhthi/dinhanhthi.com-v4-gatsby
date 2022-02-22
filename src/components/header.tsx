@@ -10,6 +10,7 @@ import { author } from '../data/settings'
 import { socials, inforLinks } from '../data/refs'
 import BadgeSocial from './badge-social'
 import BadgeInfos from './badge-infos'
+import { toggleThemeTransition } from '../layouts/base'
 
 export default function Header({
   type,
@@ -19,7 +20,7 @@ export default function Header({
   options?: HeaderOptions
 }) {
   return (
-    <header className="bg-white dark:bg-gray-900">
+    <header className={`bg-white dark:bg-gray-900 ${toggleThemeTransition}`}>
       <div className="container mx-auto pt-14">
         {getHeaderStyle(type, options)}
       </div>

@@ -32,3 +32,5 @@ export type InfoBadge = {
   customClasses?: string
   targetSelf?: boolean
 }
+
+export type SiteTheme = 'dark' | 'light'

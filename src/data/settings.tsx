@@ -1,6 +1,9 @@
+import { SiteTheme } from '../types/types'
+
 const siteConfig = {
   siteName: 'Anh-Thi Dinh',
   siteDescription: 'I failed my way to success!',
+  defaultTheme: 'dark' as SiteTheme,
 }
 
 export const postConfig = {
