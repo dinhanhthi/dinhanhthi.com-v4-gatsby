@@ -36,6 +36,7 @@ module.exports = {
         path: './src/data/',
       },
     },
+    'gatsby-plugin-dark-mode',
     {
       resolve: 'gatsby-transformer-remark',
       options: {

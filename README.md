@@ -3,12 +3,7 @@
 Version 5 of dinhanhthi.com using GatbsyJS &amp; TailwindCSS.
 
 ```bash
-gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
-# Then copy all contents inside gatsby-starter-blog/ to ../
-```
-
-```bash
-gatsby develop
+gatsby develop # or `npm run dev`
 # http://localhost:8000/
 # http://localhost:8000/___graphql
 
@@ -20,6 +15,16 @@ gatsby build
 # Note that: @react-icons/all-files lacks some icons
 npm install react-icons --save
 ```
+
+## First install
+
+```bash
+npm i
+
+# Error:  Cannot find module 'eslint'?
+npm link eslint
+```
+
 
 ## Fake dark
 

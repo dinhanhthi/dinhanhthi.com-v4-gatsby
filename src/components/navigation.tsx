@@ -9,6 +9,7 @@ import EnFlag from '../img/lang/en.svg'
 import FrFlag from '../img/lang/fr.svg'
 import { author } from '../data/settings'
 import navigation from '../data/navs'
+import ThemeToggle from './themeToggle'
 
 import { RiMoonFill } from 'react-icons/ri'
 import { MdOutlineCloseFullscreen } from 'react-icons/md'
@@ -140,6 +141,7 @@ export default function Navigation() {
                     >
                       <RiMoonFill className={iconSizeClass} />
                     </button>
+                    <ThemeToggle />
                     <a
                       className={`hidden rounded-lg p-2 sm:block ${textClass} focus:outline-none
                       `}
@@ -199,7 +201,7 @@ function LangMenuRender() {
           `}
         >
           {langMenus.map(item => (
-            <button className={langBtnClass}>
+            <button key={item.id} className={langBtnClass}>
               <img
                 src={item.icon}
                 alt="{item.name}"
