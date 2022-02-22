@@ -1,33 +1,65 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { Disclosure } from '@headlessui/react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import cntl from 'cntl'
+
+import AvatarEmoji from '../img/avatar_memoji.webp'
+import VnFlag from '../img/lang/vn.svg'
+import EnFlag from '../img/lang/en.svg'
+import FrFlag from '../img/lang/fr.svg'
+import { author } from '../data/settings'
+import navigation from '../data/navs'
+
 import { RiMoonFill } from 'react-icons/ri'
 import { MdOutlineCloseFullscreen } from 'react-icons/md'
 import { FaHamburger, FaGithub } from 'react-icons/fa'
 import { FiSearch } from 'react-icons/fi'
-import AvatarEmoji from '../images/avatar_memoji.webp'
-import { author } from '../data/config'
-import navigation from '../data/navigation'
 
-const textClass =
-  'text-gray-300 md:text-gray-300 md:bg-transparent md:hover:text-white md:hover:bg-gray-700'
-const textClassActive = 'bg-gray-700 text-white'
+const textClass = cntl`
+  md:hover:bg-slate-100 md:hover:text-sky-900 text-slate-700 dark:md:text-gray-300
+  dark:md:text-gray-300 dark:md:bg-transparent dark:md:hover:text-white
+  dark:md:hover:bg-gray-700`
 const iconSizeClass = 'w-6 h-6'
 const groupSpaceClass = 'ml-2 md:ml-4'
+export const navHeightClass = 'h-14'
+const navClasses = 'bg-white dark:bg-gray-800'
+
+const langMenus = [
+  {
+    id: 'vn',
+    name: 'Tiếng Việt',
+    icon: VnFlag,
+  },
+  {
+    id: 'en',
+    name: 'English',
+    icon: EnFlag,
+  },
+  {
+    id: 'fr',
+    name: 'Français',
+    icon: FrFlag,
+  },
+]
 
 export default function Navigation() {
   return (
-    <div className={'shadow-md fixed top-0 left-0 w-full z-50 bg-gray-800'}>
-      <div className="container mx-auto flex flex-wrap justify-items-stretch items-center">
+    <div className={`fixed top-0 left-0 z-50 w-full ${navClasses}`}>
+      <div className="container mx-auto flex flex-wrap items-center justify-items-stretch">
         <Disclosure as="nav" className="w-full">
           {({ open }) => (
             <>
-              <div className="mx-auto px-2 md:px-6 lg:px-8">
-                <div className="relative flex items-center justify-between h-14">
+              <div className="mx-auto px-2">
+                <div
+                  className={`relative flex items-center justify-between ${navHeightClass}`}
+                >
                   <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
                     {/* Mobile menu button*/}
                     <Disclosure.Button
-                      className={`fixed bottom-2 left-2 inline-flex items-center justify-center p-2 rounded-md ${textClass} bg-gray-700 rounded-full text-white`}
+                      className={`
+                        fixed bottom-2 left-2 inline-flex items-center justify-center
+                        rounded-full bg-gray-700 p-2 text-white ${textClass} shadow-md
+                      `}
                     >
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -43,14 +75,13 @@ export default function Navigation() {
                       )}
                     </Disclosure.Button>
                   </div>
-                  <div className="flex-1 flex items-center justify-center md:justify-start">
-                    <div className="flex-shrink-0 flex items-center">
-                      <Link to="/" className="block w-auto h-10">
+                  <div className="flex flex-1 items-center justify-center md:justify-start">
+                    <div className="flex flex-shrink-0 items-center">
+                      <Link to="/" className="block h-10 w-auto">
                         <img
                           src={AvatarEmoji}
-                          alt="TEXmath logo"
+                          alt="Thi's avatar"
                           className="h-full"
-                          height="35"
                           width="auto"
                         />
                       </Link>
@@ -71,13 +102,25 @@ export default function Navigation() {
                       </div>
                     </div>
                     <div
-                      className={`relative ${groupSpaceClass} flex items-center w-full h-10 rounded-lg focus-within:shadow-lg bg-gray-900 overflow-hidden`}
+                      className={`
+                        relative ${groupSpaceClass} flex h-10 w-full items-center
+                        overflow-hidden rounded-lg bg-slate-100
+                        focus-within:shadow-sm dark:bg-gray-900
+                      `}
                     >
-                      <div className="grid place-items-center h-full w-12 text-gray-500">
+                      <div
+                        className="
+                          grid h-full w-12 place-items-center text-slate-500
+                          dark:text-gray-500
+                        "
+                      >
                         <FiSearch className="h-5 w-5" />
                       </div>
                       <input
-                        className="peer h-full w-full outline-none text-gray-300 pr-2 bg-transparent text-ellipsis"
+                        className="
+                          peer h-full w-full text-ellipsis bg-transparent pr-2
+                          text-slate-900 outline-none dark:text-gray-300
+                        "
                         id="search"
                         type="search"
                         placeholder="search notes..."
@@ -86,16 +129,23 @@ export default function Navigation() {
                     </div>
                   </div>
                   <div
-                    className={`inset-y-0 right-0 flex items-center md:static md:inset-auto ${groupSpaceClass} md:pr-0`}
+                    className={`
+                      inset-y-0 right-0 flex items-center md:static md:inset-auto
+                      ${groupSpaceClass} md:pr-0
+                    `}
                   >
+                    {LangMenuRender()}
                     <button
-                      className={`p-2 rounded-lg ${textClass} focus:outline-none`}
+                      className={`rounded-lg p-2 ${textClass} focus:outline-none`}
                     >
                       <RiMoonFill className={iconSizeClass} />
                     </button>
                     <a
-                      className={`hidden sm:block p-2 rounded-lg ${textClass} focus:outline-none`}
+                      className={`hidden rounded-lg p-2 sm:block ${textClass} focus:outline-none
+                      `}
                       href={author.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaGithub className={iconSizeClass} />
                     </a>
@@ -103,8 +153,8 @@ export default function Navigation() {
                 </div>
               </div>
 
-              <Disclosure.Panel className="md:hidden">
-                <div className="px-2 pt-2 pb-3 grid grid-cols-4 gap-2 text-lg">
+              <Disclosure.Panel className="shadow-lg md:hidden">
+                <div className="grid grid-cols-4 gap-2 px-2 pt-2 pb-3 text-lg">
                   {navigation
                     .filter(item => !item.hide)
                     .map(item => (
@@ -127,6 +177,43 @@ export default function Navigation() {
   )
 }
 
+function LangMenuRender() {
+  const langBtnClass = `rounded-lg p-2 ${textClass} h-10 w-10`
+  return (
+    <Menu as="div" className="relative">
+      <Menu.Button className={`${langBtnClass} mx-auto`}>
+        <img src={VnFlag} alt="Vietnamese" className="h-full" width="auto" />
+      </Menu.Button>
+      <Transition
+        enter="transition duration-100 ease-out"
+        enterFrom="transform scale-95 opacity-0"
+        enterTo="transform scale-100 opacity-100"
+        leave="transition duration-75 ease-out"
+        leaveFrom="transform scale-100 opacity-100"
+        leaveTo="transform scale-95 opacity-0"
+      >
+        <Menu.Items
+          className={`
+            absolute -left-full mx-auto -ml-1 flex rounded-md ${navClasses} p-1
+            shadow-lg ring-black ring-opacity-5 focus:outline-none
+          `}
+        >
+          {langMenus.map(item => (
+            <button className={langBtnClass}>
+              <img
+                src={item.icon}
+                alt="{item.name}"
+                className="h-full"
+                width="auto"
+              />
+            </button>
+          ))}
+        </Menu.Items>
+      </Transition>
+    </Menu>
+  )
+}
+
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
@@ -134,8 +221,11 @@ function classNames(...classes: string[]) {
 function isActive({ isCurrent }) {
   return {
     className: classNames(
-      isCurrent ? 'bg-sky-900 text-white' : textClass + ' ' + textClassActive,
-      'block px-3 py-1.5 rounded-md text-base font-medium text-center h-14 md:h-full flex items-center justify-center'
+      isCurrent
+        ? 'bg-sky-100 text-sky-900 dark:bg-sky-900 dark:text-white'
+        : textClass,
+      cntl`block px-3 py-1.5 rounded-md text-base font-medium text-center
+        h-14md:h-full flex items-center justify-center`
     ),
     'aria-current': isCurrent ? 'page' : undefined,
   }

@@ -14,6 +14,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
+    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -24,8 +25,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
-        path: `${__dirname}/src/images`,
+        name: 'img',
+        path: `${__dirname}/src/img`,
+      },
+    },
+    'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './src/data/',
       },
     },
     {
@@ -122,7 +130,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: 'minimal-ui',
-        icon: 'src/images/avatar_memoji.webp', // This path is relative to the root of the site.
+        icon: 'src/img/avatar_memoji.webp', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-react-helmet',

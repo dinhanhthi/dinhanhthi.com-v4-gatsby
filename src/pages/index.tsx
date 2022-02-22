@@ -1,7 +1,5 @@
-// import { graphql, Link } from 'gatsby'
 import { graphql } from 'gatsby'
 import * as React from 'react'
-import Bio from '../components/bio'
 import Seo from '../components/seo'
 import Base from '../layouts/base'
 
@@ -10,9 +8,8 @@ const BlogIndex = ({ data }) => {
 
   if (posts.length === 0) {
     return (
-      <Base>
+      <Base headerType="index">
         <Seo title="All posts" />
-        <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -22,10 +19,15 @@ const BlogIndex = ({ data }) => {
     )
   }
 
+  const headerOptions = {
+    // eslint-disable-next-line prettier/prettier
+    pageTitle: 'Hi! I\'m Thi',
+  }
+
   return (
-    <Base>
+    <Base headerType="index" headerOptions={headerOptions}>
       <Seo title="All posts" />
-      {/* <Bio />
+      {/*
       <ol style={{ listStyle: 'none' }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug

@@ -21,24 +21,11 @@ gatsby build
 npm install react-icons --save
 ```
 
-## TailwindCSS
+## Fake dark
 
-👉 [Official guide](https://tailwindcss.com/docs/guides/gatsby).
+Open dev tool > ctrl + shift + p > Emulate CSS prefers-color-scheme: dark / light.
 
-## eslint + ts
-
-👉 [Official guide](https://www.gatsbyjs.com/docs/how-to/custom-configuration/eslint/).
-
-```bash
-npm install --save-dev eslint-config-react-app
-touch .eslintrc.js
-# Copy the content like it's now.
-
-npm i -D eslint-plugin-prettier @types/node @types/react @types/react-dom
-
-touch tsconfig.json
-# Content like it is now.
-```
+Or go to 3 dots (next to settings) > More tools > Rendering > search for "prefers-color-scheme"
 
 ## Custom CSS?
 

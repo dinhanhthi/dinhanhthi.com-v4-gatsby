@@ -1,17 +1,14 @@
+import { graphql, Link } from 'gatsby'
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
-
-import Bio from '../components/bio'
 import Seo from '../components/seo'
 import Base from '../layouts/base'
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || 'Title'
   const { previous, next } = data
 
   return (
-    <Base location={location} title={siteTitle}>
+    <Base headerType="post">
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -30,9 +27,7 @@ const BlogPostTemplate = ({ data, location }) => {
           itemProp="articleBody"
         />
         <hr />
-        <footer>
-          <Bio />
-        </footer>
+        <footer></footer>
       </article>
       <nav className="blog-post-nav">
         <ul

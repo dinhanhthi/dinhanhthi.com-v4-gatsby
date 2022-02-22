@@ -8,3 +8,27 @@ export type NavigationItem = {
   hideOnDesktop?: boolean
   hide?: boolean // always hide
 }
+
+export type HeaderTypes = 'index' | 'blog' | 'post'
+
+export type HeaderOptions = {
+  pageTitle?: string
+}
+
+export type SocialBadge = {
+  id?: string
+  icon: any
+  url: string
+  title: string
+  imgClass?: string
+}
+
+export type InfoBadge = {
+  id?: string
+  url: string
+  title: string
+  external?: boolean
+  icon?: any
+  customClasses?: string
+  targetSelf?: boolean
+}
