@@ -5,7 +5,7 @@ import { GrCircleInformation } from 'react-icons/gr'
 import { FaGithub, FaPenNib } from 'react-icons/fa'
 import { ImPencil2 } from 'react-icons/im'
 import { GiCoffeeCup } from 'react-icons/gi'
-import { author } from './settings'
+import { author } from './me'
 
 const navigation: NavigationItem[] = [
   {

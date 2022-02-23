@@ -1,9 +1,10 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
-import Seo from '../components/seo'
-import Base from '../layouts/base'
 
-const BlogIndex = ({ data }) => {
+import Base from '../layouts/base'
+import Seo from '../components/seo'
+
+export default function IndexPage({ data }) {
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -20,13 +21,13 @@ const BlogIndex = ({ data }) => {
   }
 
   const headerOptions = {
-    // eslint-disable-next-line prettier/prettier
-    pageTitle: 'Hi! I\'m Thi',
+    // eslint-disable-next-line quotes
+    pageTitle: "Hi! I'm Thi",
   }
 
   return (
     <Base headerType="index" headerOptions={headerOptions}>
-      <Seo title="All posts" />
+      <Seo title="Index page" />
       {/*
       <ol style={{ listStyle: 'none' }}>
         {posts.map(post => {
@@ -63,8 +64,6 @@ const BlogIndex = ({ data }) => {
     </Base>
   )
 }
-
-export default BlogIndex
 
 export const pageQuery = graphql`
   query {

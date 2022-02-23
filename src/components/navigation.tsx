@@ -7,7 +7,7 @@ import AvatarEmoji from '../img/avatar_memoji.webp'
 import VnFlag from '../img/lang/vn.svg'
 import EnFlag from '../img/lang/en.svg'
 import FrFlag from '../img/lang/fr.svg'
-import { author } from '../data/settings'
+import { author } from '../data/me'
 import navigation from '../data/navs'
 
 import { RiMoonFill, RiSunFill } from 'react-icons/ri'
@@ -16,6 +16,7 @@ import { FaHamburger, FaGithub } from 'react-icons/fa'
 import { FiSearch } from 'react-icons/fi'
 import { SiteTheme } from '../types/types'
 import { toggleThemeTransition } from '../layouts/base'
+import Tippy from '@tippyjs/react'
 
 const textClass = cntl`
   md:hover:bg-slate-100 md:hover:text-sky-900 text-slate-700 dark:md:text-gray-300
@@ -143,26 +144,34 @@ export default function Navigation({
                     `}
                   >
                     {LangMenuRender()}
-                    <button
-                      className={`rounded-lg p-2 ${textClass} focus:outline-none`}
-                      onClick={onUpdateTheme}
+                    <Tippy
+                      content={`${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
+                      placement="bottom"
+                      arrow={false}
                     >
-                      {theme === 'light' && (
-                        <RiMoonFill className={iconSizeClass} />
-                      )}
-                      {theme === 'dark' && (
-                        <RiSunFill className={iconSizeClass} />
-                      )}
-                    </button>
-                    <a
-                      className={`hidden rounded-lg p-2 sm:block ${textClass} focus:outline-none
+                      <button
+                        className={`rounded-lg p-2 ${textClass} focus:outline-none`}
+                        onClick={onUpdateTheme}
+                      >
+                        {theme === 'light' && (
+                          <RiMoonFill className={iconSizeClass} />
+                        )}
+                        {theme === 'dark' && (
+                          <RiSunFill className={iconSizeClass} />
+                        )}
+                      </button>
+                    </Tippy>
+                    <Tippy content="My Github" placement="bottom" arrow={false}>
+                      <a
+                        className={`hidden rounded-lg p-2 sm:block ${textClass} focus:outline-none
                       `}
-                      href={author.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaGithub className={iconSizeClass} />
-                    </a>
+                        href={author.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaGithub className={iconSizeClass} />
+                      </a>
+                    </Tippy>
                   </div>
                 </div>
               </div>
