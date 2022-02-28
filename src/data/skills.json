@@ -1,13 +1,16 @@
 [
   {
+    "id": "languages",
     "name": "Languages",
     "list": ["freefempp", "js", "matlab", "php", "python", "ts"]
   },
   {
+    "id": "ai-data",
     "name": "AI & Data",
     "list": ["jupyter", "pytorch", "scikit-learn", "tensorflow"]
   },
   {
+    "id": "frontend",
     "name": "Frontend",
     "list": [
       "angular",
@@ -26,6 +29,7 @@
     ]
   },
   {
+    "id": "backend",
     "name": "Backend",
     "list": [
       "airflow",
@@ -42,6 +46,7 @@
     ]
   },
   {
+    "id": "tools",
     "name": "Tools",
     "list": ["bash", "git", "gitkraken", "latex", "linux", "postman", "sphinx", "vscode"]
   }

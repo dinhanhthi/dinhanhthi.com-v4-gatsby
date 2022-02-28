@@ -32,14 +32,27 @@ export default function Base({
       setThemeTo(setTheme, siteConfig.defaultTheme)
     }
   }, [])
+  const bgClass = 'bg-white dark:bg-[#282a36] ' + toggleThemeTransition
   return (
     <>
       <Navigation
         theme={theme as SiteTheme}
         onUpdateTheme={() => onUpdateTheme(theme as SiteTheme)}
       />
-      <Header type={headerType} options={headerOptions} />
-      <main role="main">{children}</main>
+      <div className={bgClass}>
+        <Header
+          type={headerType}
+          options={{
+            ...headerOptions,
+            customClasses: headerOptions?.customClasses
+              ? headerOptions.customClasses + ' ' + bgClass
+              : bgClass,
+          }}
+        />
+      </div>
+      <main className={bgClass} role="main">
+        {children}
+      </main>
     </>
   )
 }

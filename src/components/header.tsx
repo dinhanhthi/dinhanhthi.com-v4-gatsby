@@ -11,7 +11,6 @@ import { author } from '../data/me'
 import { socials, inforLinks, coordinate } from '../data/me'
 import BadgeSocial from './badge-social'
 import BadgeInfos from './badge-infos'
-import { toggleThemeTransition } from '../layouts/base'
 
 export default function Header({
   type,
@@ -21,8 +20,8 @@ export default function Header({
   options?: HeaderOptions
 }) {
   return (
-    <header className={`bg-white dark:bg-gray-900 ${toggleThemeTransition}`}>
-      <div className="container mx-auto pt-14">
+    <header className={options?.customClasses ? options.customClasses : ''}>
+      <div className="container mx-auto pt-14 lg:w-5/6 xl:w-4/6">
         {getHeaderStyle(type, options)}
       </div>
     </header>
@@ -30,8 +29,7 @@ export default function Header({
 }
 
 const ySpacingClass = 'mt-6 md:mt-4'
-const titleClass = cntl`text-3xl text-slate-800 dark:text-white
-  font-[Recoleta,Arial,Helvetica,sans-serif] font-semibold`
+const titleClass = cntl`text-3xl text-main dark:text-main-dark font-heading font-semibold`
 
 function getHeaderStyle(type: HeaderTypes, options?: HeaderOptions) {
   switch (type) {
@@ -52,7 +50,7 @@ function headerAbout(options?: HeaderOptions) {
     >
       {options?.pageTitle && (
         <h1
-          className={`flex ${ySpacingClass} ${titleClass} w-full justify-center md:justify-start`}
+          className={`flex ${ySpacingClass} ${titleClass} w-full justify-center`}
         >
           <span
             className="mr-2 inline-flex h-9 origin-[70%_70%] animate-wave
@@ -68,20 +66,22 @@ function headerAbout(options?: HeaderOptions) {
           {options.pageTitle}
         </h1>
       )}
-      <div className="flex w-full flex-col gap-4 md:flex-row md:gap-5">
-        <p
-          className={`flex-1 ${ySpacingClass} text-left text-slate-700 dark:text-slate-200`}
-        >
+      <div
+        className={`flex ${ySpacingClass} w-full flex-col items-center gap-4 md:flex-row md:gap-5`}
+      >
+        <p className={'flex-1 text-left text-main dark:text-main-dark'}>
           {parse(author.longIntro)}
         </p>
-        <div className="w-auto">
+        <div className="w-full rounded-lg border border-slate-300 p-4 dark:border-slate-600 md:w-auto">
           <ul>
             {Object.keys(coordinate).map(key => (
               <li key={key}>
-                <span className="mr-3 font-semibold capitalize text-sky-700">
+                <span className="mr-3 font-semibold capitalize text-sky-700 dark:text-sky-300">
                   {key}
                 </span>
-                <span className="text-slate-700">{coordinate[key]}</span>
+                <span className="text-slate-700 dark:text-slate-200">
+                  {coordinate[key]}
+                </span>
               </li>
             ))}
           </ul>
@@ -134,8 +134,7 @@ function headerIndex(options?: HeaderOptions) {
           </h1>
         )}
         <p
-          className={`max-w-full ${ySpacingClass} text-center
-            text-slate-700 dark:text-slate-200 md:text-left`}
+          className={`max-w-full ${ySpacingClass} text-center text-main dark:text-main-dark md:text-left`}
         >
           {parse(author.shortIntro)}
         </p>

@@ -7,6 +7,7 @@ import GoodreadsIcon from '../img/social/goodreads.svg'
 import SOIcon from '../img/social/so.svg'
 import CouseraIcon from '../img/social/coursera.png'
 import Math2ITIcon from '../img/social/math2it.png'
+
 import { InfoBadge, SocialBadge } from '../types/types'
 
 export const author = {

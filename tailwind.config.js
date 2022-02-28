@@ -18,6 +18,19 @@ module.exports = {
       animation: {
         wave: 'wave 2.5s infinite',
       },
+      backgroundImage: {
+        'repeating-dots':
+          '-webkit-repeating-radial-gradient(center center,#777,#777 1px,transparent 0,transparent 100%)',
+      },
+      fontFamily: {
+        heading: ['Recoleta', 'Arial', 'Helvetica', 'sans-serif'],
+      },
+      colors: {
+        main: '#1e293b',
+        'main-dark': '#f8fafc',
+        'bg-dark': '#2f3240',
+        'bd-dark': '#3b3e54',
+      },
     },
   },
   plugins: [],

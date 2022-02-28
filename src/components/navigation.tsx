@@ -19,13 +19,14 @@ import { toggleThemeTransition } from '../layouts/base'
 import Tippy from '@tippyjs/react'
 
 const textClass = cntl`
-  md:hover:bg-slate-100 md:hover:text-sky-900 text-slate-700 dark:md:text-gray-300
-  dark:md:text-gray-300 dark:md:bg-transparent dark:md:hover:text-white
+  md:hover:bg-gray-100 md:hover:text-sky-900 text-slate-700 dark:md:text-gray-300
+  dark:text-gray-300 dark:md:bg-transparent dark:md:hover:text-white
   dark:md:hover:bg-gray-700`
 const iconSizeClass = 'w-6 h-6'
 const groupSpaceClass = 'ml-2 md:ml-4'
 export const navHeightClass = 'h-14'
-const navClasses = `bg-white dark:bg-gray-800 ${toggleThemeTransition}`
+const navClasses = 'bg-white dark:bg-[#323541] dark:shadow-transparent'
+const bgActiveClass = 'dark:bg-[#272727]'
 
 const langMenus = [
   {
@@ -53,7 +54,9 @@ export default function Navigation({
   onUpdateTheme: any
 }) {
   return (
-    <div className={`fixed top-0 left-0 z-50 w-full ${navClasses}`}>
+    <div
+      className={`fixed top-0 left-0 z-50 w-full ${navClasses} ${toggleThemeTransition}`}
+    >
       <div className="container mx-auto flex flex-wrap items-center justify-items-stretch">
         <Disclosure as="nav" className="w-full">
           {({ open }) => (
@@ -114,7 +117,7 @@ export default function Navigation({
                       className={`
                         relative ${groupSpaceClass} flex h-10 w-full items-center
                         overflow-hidden rounded-lg bg-slate-100
-                        focus-within:shadow-sm dark:bg-gray-900
+                        focus-within:shadow-inner ${bgActiveClass}
                       `}
                     >
                       <div
@@ -150,26 +153,32 @@ export default function Navigation({
                       arrow={false}
                     >
                       <button
-                        className={`rounded-lg p-2 ${textClass} focus:outline-none`}
+                        className={`group rounded-lg p-2 ${textClass} focus:outline-none`}
                         onClick={onUpdateTheme}
                       >
                         {theme === 'light' && (
-                          <RiMoonFill className={iconSizeClass} />
+                          <RiMoonFill
+                            className={`transition-transform group-active:scale-90 ${iconSizeClass}`}
+                          />
                         )}
                         {theme === 'dark' && (
-                          <RiSunFill className={iconSizeClass} />
+                          <RiSunFill
+                            className={`transition-transform group-active:scale-90 ${iconSizeClass}`}
+                          />
                         )}
                       </button>
                     </Tippy>
                     <Tippy content="My Github" placement="bottom" arrow={false}>
                       <a
-                        className={`hidden rounded-lg p-2 sm:block ${textClass} focus:outline-none
+                        className={`group hidden rounded-lg p-2 sm:block ${textClass} focus:outline-none
                       `}
                         href={author.github}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <FaGithub className={iconSizeClass} />
+                        <FaGithub
+                          className={`transition-transform group-active:scale-90 ${iconSizeClass}`}
+                        />
                       </a>
                     </Tippy>
                   </div>
@@ -204,8 +213,13 @@ function LangMenuRender() {
   const langBtnClass = `rounded-lg p-2 ${textClass} h-10 w-10`
   return (
     <Menu as="div" className="relative">
-      <Menu.Button className={`${langBtnClass} mx-auto`}>
-        <img src={VnFlag} alt="Vietnamese" className="h-full" width="auto" />
+      <Menu.Button className={`${langBtnClass} group mx-auto`}>
+        <img
+          src={VnFlag}
+          alt="Vietnamese"
+          className="h-full transition-transform group-active:scale-90"
+          width="auto"
+        />
       </Menu.Button>
       <Transition
         enter="transition duration-100 ease-out"
@@ -245,7 +259,7 @@ function isActive({ isCurrent }) {
   return {
     className: classNames(
       isCurrent
-        ? 'bg-sky-100 text-sky-900 dark:bg-sky-900 dark:text-white'
+        ? `bg-sky-100 text-sky-900 ${bgActiveClass} dark:text-white`
         : textClass,
       cntl`block px-3 py-1.5 rounded-md text-base font-medium text-center
         h-14md:h-full flex items-center justify-center`

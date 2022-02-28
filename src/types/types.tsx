@@ -13,6 +13,7 @@ export type HeaderTypes = 'index' | 'about' | 'blog' | 'post'
 
 export type HeaderOptions = {
   pageTitle?: string
+  customClasses?: string
 }
 
 export type SocialBadge = {
@@ -31,6 +32,20 @@ export type InfoBadge = {
   icon?: any
   customClasses?: string
   targetSelf?: boolean
+}
+
+export type TechItem = {
+  id: string
+  name: string
+  icon: any
+  url: string
+  imgClass?: string
+}
+
+export type SkillGroupType = {
+  id: string
+  name: string
+  list: string[]
 }
 
 export type SiteTheme = 'dark' | 'light'
