@@ -24,6 +24,7 @@ export default function Base({
       setThemeTo(setTheme, 'dark')
     }
   }
+
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as SiteTheme
     if (savedTheme) {
@@ -32,28 +33,24 @@ export default function Base({
       setThemeTo(setTheme, siteConfig.defaultTheme)
     }
   }, [])
-  const bgClass = 'bg-white dark:bg-[#282a36] ' + toggleThemeTransition
+
   return (
-    <>
+    <div className={`bg-white dark:bg-bg-main-dark ${toggleThemeTransition}`}>
       <Navigation
         theme={theme as SiteTheme}
         onUpdateTheme={() => onUpdateTheme(theme as SiteTheme)}
       />
-      <div className={bgClass}>
-        <Header
-          type={headerType}
-          options={{
-            ...headerOptions,
-            customClasses: headerOptions?.customClasses
-              ? headerOptions.customClasses + ' ' + bgClass
-              : bgClass,
-          }}
-        />
-      </div>
-      <main className={bgClass} role="main">
-        {children}
-      </main>
-    </>
+      <Header
+        type={headerType}
+        options={{
+          ...headerOptions,
+          customClasses: headerOptions?.customClasses
+            ? headerOptions.customClasses
+            : null,
+        }}
+      />
+      <main role="main">{children}</main>
+    </div>
   )
 }
 

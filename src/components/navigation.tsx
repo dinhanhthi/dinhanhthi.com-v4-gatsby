@@ -25,7 +25,7 @@ const textClass = cntl`
 const iconSizeClass = 'w-6 h-6'
 const groupSpaceClass = 'ml-2 md:ml-4'
 export const navHeightClass = 'h-14'
-const navClasses = 'bg-white dark:bg-[#323541] dark:shadow-transparent'
+const navClasses = 'bg-white dark:bg-bg-nav-dark dark:shadow-transparent'
 const bgActiveClass = 'dark:bg-[#272727]'
 
 const langMenus = [

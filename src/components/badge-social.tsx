@@ -9,7 +9,7 @@ export default function BadgeSocial({ options }: { options: SocialBadge }) {
       <a
         className={`
           group block h-12 w-12 rounded-2xl bg-sky-100 p-2 shadow-sm
-          dark:bg-bg-dark dark:shadow-none md:h-10 md:w-10 md:p-1.5
+          dark:bg-bg-code-dark dark:shadow-none md:h-10 md:w-10 md:p-1.5
         `}
         href={options.url}
         target="_blank"

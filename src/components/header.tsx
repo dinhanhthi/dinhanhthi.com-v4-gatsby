@@ -19,8 +19,19 @@ export default function Header({
   type: HeaderTypes
   options?: HeaderOptions
 }) {
+  const headerDefaultClass = cntl`
+    dark:bg-gradient-to-b dark:from-bg-main-dark to-bg-nav-dark
+    after:block after:h-8 after:w-full after:bg-wave dark:after:bg-wave-dark
+  `
+
   return (
-    <header className={options?.customClasses ? options.customClasses : ''}>
+    <header
+      className={
+        options?.customClasses
+          ? options.customClasses + ' ' + headerDefaultClass
+          : headerDefaultClass
+      }
+    >
       <div className="container mx-auto pt-14 lg:w-5/6 xl:w-4/6">
         {getHeaderStyle(type, options)}
       </div>

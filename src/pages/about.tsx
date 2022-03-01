@@ -10,14 +10,16 @@ export default function AboutPage() {
   }
   return (
     <Base headerType="about" headerOptions={headerOptions}>
-      <div className="container mx-auto flex flex-wrap py-4">
-        {Skills.map((skill: any) => (
-          <SkillGroup
-            className="flex-auto md:flex-1"
-            key={skill.id}
-            skillGroup={skill}
-          />
-        ))}
+      <div className="bg-stone-100 before:block before:h-8 before:w-full before:bg-wave dark:bg-transparent dark:before:bg-wave-dark ">
+        <div className="container mx-auto flex flex-wrap py-4 pt-5">
+          {Skills.map((skill: any) => (
+            <SkillGroup
+              className="flex-auto md:flex-1"
+              key={skill.id}
+              skillGroup={skill}
+            />
+          ))}
+        </div>
       </div>
     </Base>
   )
