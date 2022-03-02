@@ -48,4 +48,22 @@ export type SkillGroupType = {
   list: string[]
 }
 
+export type CVItem = {
+  id?: string
+  where: string
+  bgWhite?: boolean
+  logo: any
+  url?: string
+  title: string
+  date: string
+  activity: string[]
+  tech?: string[]
+}
+
+export type CVGroupType = {
+  id?: string
+  name: string
+  list: CVItem[]
+}
+
 export type SiteTheme = 'dark' | 'light'

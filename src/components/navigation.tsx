@@ -2,6 +2,12 @@ import { Link } from 'gatsby'
 import React from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import cntl from 'cntl'
+import Tippy from '@tippyjs/react'
+
+import { RiMoonFill, RiSunFill } from 'react-icons/ri'
+import { MdOutlineCloseFullscreen } from 'react-icons/md'
+import { FaHamburger, FaGithub } from 'react-icons/fa'
+import { FiSearch } from 'react-icons/fi'
 
 import AvatarEmoji from '../img/avatar_memoji.webp'
 import VnFlag from '../img/lang/vn.svg'
@@ -9,17 +15,11 @@ import EnFlag from '../img/lang/en.svg'
 import FrFlag from '../img/lang/fr.svg'
 import { author } from '../data/me'
 import navigation from '../data/navs'
-
-import { RiMoonFill, RiSunFill } from 'react-icons/ri'
-import { MdOutlineCloseFullscreen } from 'react-icons/md'
-import { FaHamburger, FaGithub } from 'react-icons/fa'
-import { FiSearch } from 'react-icons/fi'
 import { SiteTheme } from '../types/types'
 import { toggleThemeTransition } from '../layouts/base'
-import Tippy from '@tippyjs/react'
 
 const textClass = cntl`
-  md:hover:bg-gray-100 md:hover:text-sky-900 text-slate-700 dark:md:text-gray-300
+  md:hover:bg-stone-100 md:hover:text-sky-900 text-slate-700 dark:md:text-gray-300
   dark:text-gray-300 dark:md:bg-transparent dark:md:hover:text-white
   dark:md:hover:bg-gray-700`
 const iconSizeClass = 'w-6 h-6'
@@ -116,7 +116,7 @@ export default function Navigation({
                     <div
                       className={`
                         relative ${groupSpaceClass} flex h-10 w-full items-center
-                        overflow-hidden rounded-lg bg-slate-100
+                        overflow-hidden rounded-lg bg-stone-100
                         focus-within:shadow-inner ${bgActiveClass}
                       `}
                     >
