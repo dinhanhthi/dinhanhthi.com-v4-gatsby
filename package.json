@@ -2,7 +2,7 @@
   "name": "dinhanhthi.com-v5",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "author": "Anh-Thi DINH <dinhanhthi@gmail.com>",
   "bugs": {
     "url": "https://github.com/dinhanhthi/dinhanhthi.com-v5/issues"
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
-    "gatsby": "^4.6.2",
+    "gatsby": "^4.9.0",
     "gatsby-plugin-feed": "^4.6.0",
     "gatsby-plugin-gatsby-cloud": "^4.6.0",
     "gatsby-plugin-google-analytics": "^4.6.0",
