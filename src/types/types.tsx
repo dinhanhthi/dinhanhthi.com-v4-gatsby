@@ -67,3 +67,14 @@ export type CVGroupType = {
 }
 
 export type SiteTheme = 'dark' | 'light'
+
+export type Project = {
+  id?: string
+  title: string
+  icon?: string
+  description: string
+  source?: string
+  url?: string
+  tech?: string[]
+  techText?: string[]
+}

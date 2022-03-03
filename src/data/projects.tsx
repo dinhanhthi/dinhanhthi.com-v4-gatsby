@@ -1,0 +1,198 @@
+import { Project } from '../types/types'
+
+const projects: Project[] = [
+  {
+    id: 'google-api-playground',
+    title: 'Google APIs Playground',
+    icon: '🏖',
+    description: 'A playground for Google APIs',
+    source: 'https://github.com/dinhanhthi/google-api-playground',
+    url: 'https://dinhanhthi.com/google-dialogflow-api/',
+    tech: ['js', 'google-nodejs-api'],
+  },
+  {
+    id: 'texmath-rebuild',
+    title: 'TEXmath Rebuild',
+    icon: '🧨 ',
+    description:
+      'New version of TEXmath. A website about LaTeX and Tech Tutorials. This site is a part of our main project - Math2IT.',
+    source: 'https://github.com/math2it/texmath-gas',
+    url: 'http://texmath.com',
+    tech: ['gatsby', 'js', 'react', 'tailwindcss', 'graphql', 'wordpress'],
+  },
+  {
+    id: 'dat.com',
+    title: 'dinhanhthi.com',
+    icon: '⭐',
+    description: '11ty theme. Current version of my personal website.',
+    source: 'https://github.com/dinhanhthi/dinhanhthi.com',
+    url: 'http://dinhanhthi.com',
+    tech: ['eleventy', 'html5', 'js', 'liquid', 'nodejs', 'nunjucks', 'scss'],
+  },
+  {
+    id: 'ds-learning',
+    title: 'Data Science Learning',
+    description:
+      'All the courses, assignments, exercises, mini-projects, and books that I have worked on so far in my self-study of Machine Learning and Data Science.',
+    source: 'https://github.com/dinhanhthi/data-science-learning',
+    icon: '📊',
+    techText: ['many techs'],
+  },
+  {
+    id: 'mountain-vs-beach',
+    title: 'Mountain vs Beach Classifier',
+    description: 'A small project to create a classifier: mountain vs beach.',
+    source: 'https://github.com/dinhanhthi/mountain-vs-beach',
+    icon: '🏖',
+    tech: ['bootstrap', 'html5', 'js', 'scss', 'tensorflow'],
+  },
+  {
+    id: '11ty-elasticlunrjs',
+    title: '11ty + ElasticlunrJS',
+    description:
+      // eslint-disable-next-line quotes
+      "A demo of the search function on eleventy's website using Elasticlunr.js.",
+    source: 'https://github.com/dinhanhthi/eleventy-elasticlunr-js',
+    icon: '🔎',
+    tech: ['eleventy', 'js', 'nodejs'],
+  },
+  {
+    id: 'web-dev-learning',
+    title: 'Web Dev Learning',
+    description:
+      'Everything I have done so far to learn Web Development myself.',
+    source: 'https://github.com/dinhanhthi/web-dev-learning',
+    icon: '🌐',
+    techText: ['many techs'],
+  },
+  {
+    id: 'p13-discussion-group',
+    title: 'P13 Discussion Group',
+    description:
+      'Private group to exchange ideas in IT between Vietnamese friends at Sorbonne Paris Nord University',
+    source: 'https://github.com/dinhanhthi/P13-discuss-group',
+    icon: '💡',
+    techText: ['many techs'],
+  },
+  {
+    id: 'simple-perso',
+    title: 'Simple Perso',
+    icon: '🍒',
+    description: 'A simple and beautiful personal jekyll theme.',
+    source: 'https://github.com/dinhanhthi/simple-perso',
+    url: 'https://dinhanhthi.github.io/simple-perso/',
+    tech: ['bootstrap', 'docker', 'html5', 'jekyll', 'scss'],
+  },
+  {
+    id: 'dat-v1',
+    title: 'dinhanhthi.com-v1',
+    description: 'A personal Jekyll theme. The first version of my website.',
+    source: 'https://github.com/dinhanhthi/dinhanhthi.com-v1',
+    icon: '⛑',
+    tech: ['bootstrap', 'html5', 'jekyll', 'scss'],
+  },
+  {
+    id: 'dat-v2',
+    title: 'dinhanhthi.com-v2',
+    description: 'A personal Jekyll theme. The second version of my website.',
+    source: 'https://github.com/dinhanhthi/dinhanhthi.com-v2',
+    icon: '🥕',
+    tech: ['bootstrap', 'docker', 'html5', 'jekyll', 'scss'],
+  },
+  {
+    id: 'dat-v3',
+    title: 'dinhanhthi.com-v3',
+    description: 'A personal Jekyll theme. The third version of my website.',
+    source: 'https://github.com/dinhanhthi/dinhanhthi.com-v3',
+    icon: '🍅',
+    tech: ['bootstrap', 'docker', 'html5', 'jekyll', 'scss'],
+  },
+  {
+    id: 'cafe-in-hcm',
+    title: 'Cafe in HCM',
+    icon: '☕',
+    description:
+      'A final project for the "Applied Data Science Capstone" course from IBM on Coursera. Setting up a café in Ho Chi Minh City.',
+    source: 'https://github.com/dinhanhthi/cafe-in-hcm',
+    url: 'https://note.dinhanhthi.com/setting-up-a-cafe-in-hcmc',
+    tech: ['foursquare-api', 'jupyter', 'python', 'scikit-learn'],
+  },
+  {
+    id: 'thi-thesis-template',
+    title: 'ThiThesisTemp',
+    icon: '🎨',
+    description: 'A simple, beautiful LaTeX theme for books, thesis.',
+    source: 'https://github.com/dinhanhthi/ThiThesisTemp',
+    tech: ['latex'],
+  },
+  {
+    id: 'math2itwp',
+    title: 'Math2ITwp',
+    icon: '🐘',
+    description:
+      'A nice Wordpress theme based on Bootstrap with different layouts for posts.',
+    source: 'https://github.com/dinhanhthi/math2itwp',
+    url: 'https://math2it.com',
+    tech: [
+      'bootstrap',
+      'docker',
+      'html5',
+      'js',
+      'mysql',
+      'nodejs',
+      'php',
+      'scss',
+      'wordpress',
+    ],
+  },
+  {
+    id: 'notetheme',
+    title: 'NoteTheme',
+    icon: '📝',
+    description: 'An AIO Jekyll theme designed for the purpose of notes.',
+    url: 'https://dinhanhthi.github.io/NoteTheme/',
+    source: 'https://github.com/dinhanhthi/NoteTheme',
+    tech: ['bootstrap', 'docker', 'html5', 'jekyll', 'liquid', 'scss'],
+  },
+  {
+    id: 'math2it.com',
+    title: 'math2it.com',
+    icon: '🔥',
+    description:
+      'A Vietnamese website for intuitive knowledge (math, education and technology).',
+    url: 'http://math2it.com',
+    tech: ['latex'],
+    techText: ['maths', 'IT', 'tutorial'],
+  },
+  {
+    id: 'math2it-group',
+    title: 'Math2IT Group',
+    icon: '🎲',
+    description: 'A Vietnamese community about math, education and technology.',
+    url: 'https://www.facebook.com/groups/math2it/',
+    tech: ['latex'],
+    techText: ['community', 'forum', 'Q&A'],
+  },
+  {
+    id: 'tania-jekyll',
+    title: 'TaniaJekyll',
+    icon: '🚀',
+    description:
+      'A beautiful Jekyll personal theme with different layouts for posts, based on Bootstrap & Jekyll.',
+    url: 'https://dinhanhthi.github.io/TaniaJekyll',
+    source: 'https://github.com/dinhanhthi/TaniaJekyll',
+    tech: ['bootstrap', 'docker', 'html5', 'jekyll', 'liquid', 'scss'],
+  },
+  {
+    id: 'nxfem',
+    title: 'NXFEM',
+    icon: '🔢',
+    source: 'https://github.com/dinhanhthi/nxfem',
+    description:
+      'A Matlab library for Nitsche - Extended Finite Element Method.',
+    tech: ['matlab', 'latex'],
+    techText: ['numerical methods', 'maths'],
+  },
+]
+
+export default projects

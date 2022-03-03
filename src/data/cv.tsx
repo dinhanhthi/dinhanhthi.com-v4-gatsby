@@ -21,7 +21,7 @@ const cv: CVGroupType[] = [
         logo: IdetaLogo,
         url: 'https://www.ideta.io',
         title: 'Web Developer & Data Scientist',
-        date: '2021 — ongoing',
+        date: '2021 — now',
         activity: [
           'Ideta is a solution that allows companies to very easily create conversational assistants for many communication channels like Messenger, SMS, Slack, Wechat, Skype Business, ... but also for voice like Google Home. The solution makes the creation of chatbots accessible to everyone.',
           'My job is to understand how things work both on the backend and on the frontend, and then integrate some Natural Language Processing services into the main platform.',
@@ -84,7 +84,7 @@ const cv: CVGroupType[] = [
         logo: Math2ITLogo,
         url: 'https://math2it.com',
         title: 'Founder & Web Dev & Blogger',
-        date: '2013 — current',
+        date: '2013 — now',
         activity: [
           'Math2IT is a Vietnamese math, education, and technology community. We write about intuitive math and technology that help Vietnamese learn these subjects easily.',
           // eslint-disable-next-line quotes
@@ -131,31 +131,31 @@ const cv: CVGroupType[] = [
     name: 'Education',
     list: [
       {
-        id: 'self-learn',
+        id: 'self-learn-ds',
         where: 'Self-learning',
         logo: SelfLearnLogo,
         title: 'Data Science',
-        date: '2019 — current',
+        date: '2019 — now',
         activity: [
           'I taught myself Data Science using online courses (Coursera, deeplearning.ai, Dataquest, Fastai, Oxford) and real projects.',
         ],
       },
       {
-        id: 'self-learn',
+        id: 'self-learn-web',
         where: 'Self-learning',
         logo: SelfLearnLogo,
         title: 'Web Development',
-        date: '2013 — current',
+        date: '2013 — now',
         activity: [
           'I taught myself Web Development by making applications, websites and real projects.',
         ],
       },
       {
-        id: 'self-learn',
+        id: 'self-learn-cs',
         where: 'Self-learning',
         logo: SelfLearnLogo,
         title: 'Computer Science',
-        date: '2008 — current',
+        date: '2008 — now',
         activity: [
           'I taught myself CS by watching online video courses, reading books, and practicing programming on sites like Hackerrank.',
         ],

@@ -1,12 +1,9 @@
 import React from 'react'
-import cntl from 'cntl'
 
 import { SkillGroupType } from '../types/types'
 import BadgeTech from '../components/badge-tech'
 import HeadingAbout from './heading-about'
-
-export const codeSectionClass = cntl`
-  shadow-lg dark:border dark:border-bd-dark dark:bg-bg-code-dark rounded-md border bg-white`
+import { codeSectionClass } from '../styles/common'
 
 export default function SkillGroup({
   skillGroup,
@@ -16,7 +13,7 @@ export default function SkillGroup({
   className?: string
 }) {
   return (
-    <div className={`p-2 ${className}`}>
+    <div className={`${className ? className : ''}`}>
       <HeadingAbout content={skillGroup.name} />
       <div className={`flex flex-wrap gap-2 p-3 ${codeSectionClass}`}>
         {skillGroup.list.map((skill: string) => (

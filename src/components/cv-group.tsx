@@ -1,9 +1,9 @@
 import React from 'react'
+import { codeSectionClass } from '../styles/common'
 
 import { CVGroupType, CVItem } from '../types/types'
 import CVSection from './cv-section'
 import HeadingAbout from './heading-about'
-import { codeSectionClass } from './skill-group'
 
 export default function CVGroup({
   cvGroup,
