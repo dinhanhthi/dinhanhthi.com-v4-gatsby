@@ -16,16 +16,15 @@ import FrFlag from '../img/lang/fr.svg'
 import { author } from '../data/me'
 import navigation from '../data/navs'
 import { SiteTheme } from '../types/types'
-import { toggleThemeTransition } from '../layouts/base'
 
 const textClass = cntl`
-  md:hover:bg-stone-100 md:hover:text-sky-900 text-slate-700 dark:md:text-gray-300
-  dark:text-gray-300 dark:md:bg-transparent dark:md:hover:text-white
+  md:hover:bg-stone-100 md:hover:text-sky-900 dark:md:bg-transparent dark:md:hover:text-white
   dark:md:hover:bg-gray-700`
 const iconSizeClass = 'w-6 h-6'
 const groupSpaceClass = 'ml-2 md:ml-4'
 export const navHeightClass = 'h-14'
-const navClasses = 'bg-white dark:bg-bg-nav-dark dark:shadow-transparent'
+export const navClasses =
+  'bg-white dark:bg-bg-nav-dark dark:shadow-transparent text-slate-700 dark:text-gray-300'
 const bgActiveClass = 'dark:bg-[#272727]'
 
 const langMenus = [
@@ -54,9 +53,7 @@ export default function Navigation({
   onUpdateTheme: any
 }) {
   return (
-    <div
-      className={`fixed top-0 left-0 z-50 w-full ${navClasses} ${toggleThemeTransition}`}
-    >
+    <div className={`fixed top-0 left-0 z-50 w-full ${navClasses}`}>
       <div className="container mx-auto flex flex-wrap items-center justify-items-stretch">
         <Disclosure as="nav" className="w-full">
           {({ open }) => (
@@ -69,7 +66,7 @@ export default function Navigation({
                     {/* Mobile menu button*/}
                     <Disclosure.Button
                       className={`
-                        fixed bottom-2 left-2 inline-flex items-center justify-center
+                        fixed bottom-3 left-3 inline-flex items-center justify-center
                         rounded-full bg-gray-700 p-2 text-white ${textClass} shadow-md
                       `}
                     >

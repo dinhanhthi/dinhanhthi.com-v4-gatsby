@@ -13,7 +13,7 @@ export default function CVGroup({
   className?: string
 }) {
   return (
-    <div className={className}>
+    <div className={className ? className : ''}>
       <HeadingAbout className="mb-4" content={cvGroup.name} />
       <div
         className={`${codeSectionClass} divide-y px-4 dark:divide-slate-600`}

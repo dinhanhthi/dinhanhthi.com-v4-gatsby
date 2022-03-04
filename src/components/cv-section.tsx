@@ -20,7 +20,11 @@ export default function CVSection({
         {logo(cv)}
         <h4 className="mt-2 text-center text-base font-semibold  dark:text-white ">
           {cv.url && (
-            <a className={`${aLinkClass}`} href={cv.url}>
+            <a
+              className={`${aLinkClass}`}
+              href={cv.url}
+              rel="noopener noreferrer"
+            >
               {cv.where}
             </a>
           )}

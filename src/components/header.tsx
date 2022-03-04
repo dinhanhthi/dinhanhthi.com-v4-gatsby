@@ -21,7 +21,6 @@ export default function Header({
 }) {
   const headerDefaultClass = cntl`
     dark:bg-gradient-to-b dark:from-bg-main-dark to-bg-nav-dark
-    after:block after:h-8 after:w-full after:bg-wave dark:after:bg-wave-dark
   `
 
   return (
@@ -57,7 +56,7 @@ function headerAbout(options?: HeaderOptions) {
   return (
     <div
       className="mx-auto flex flex-col flex-wrap items-center justify-items-stretch
-      px-4 pt-4 pb-8 md:flex-row xl:max-w-6xl"
+      p-4 md:flex-row xl:max-w-6xl"
     >
       {options?.pageTitle && (
         <h1

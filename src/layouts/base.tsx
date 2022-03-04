@@ -4,8 +4,8 @@ import Navigation from '../components/navigation'
 import '../styles/main.scss'
 import { HeaderOptions, HeaderTypes, SiteTheme } from '../types/types'
 import siteConfig from '../data/settings'
-
-export const toggleThemeTransition = 'transition duration-200 ease-in-out'
+import Footer from '../components/footer'
+import WaveSplit from '../components/wave-split'
 
 export default function Base({
   children,
@@ -35,7 +35,7 @@ export default function Base({
   }, [])
 
   return (
-    <div className={`bg-white dark:bg-bg-main-dark ${toggleThemeTransition}`}>
+    <div className={'bg-white dark:bg-bg-main-dark'}>
       <Navigation
         theme={theme as SiteTheme}
         onUpdateTheme={() => onUpdateTheme(theme as SiteTheme)}
@@ -49,7 +49,10 @@ export default function Base({
             : null,
         }}
       />
+      <WaveSplit />
       <main role="main">{children}</main>
+      <WaveSplit footer={true} />
+      <Footer />
     </div>
   )
 }

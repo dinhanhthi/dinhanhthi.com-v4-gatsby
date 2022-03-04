@@ -19,8 +19,8 @@ export default function AboutPage() {
   return (
     <Base headerType="about" headerOptions={headerOptions}>
       <div className="bg-stone-100 dark:bg-transparent">
-        <div className={'container mx-auto p-3'}>
-          <div className={`flex flex-wrap gap-4 ${sectionSpacing}`}>
+        <div className={'container mx-auto py-4 px-3'}>
+          <div className={'flex flex-wrap gap-4'}>
             {Skills.map((skill: any) => (
               <SkillGroup
                 className="min-w-[200px] flex-auto md:flex-1"
