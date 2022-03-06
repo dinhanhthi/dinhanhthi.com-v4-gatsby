@@ -14,7 +14,7 @@ export default function SkillGroup({
 }) {
   return (
     <div className={`${className ? className : ''}`}>
-      <HeadingAbout content={skillGroup.name} />
+      <HeadingAbout content={skillGroup.name} className="text-3xl" />
       <div className={`flex flex-wrap gap-2 p-3 ${codeSectionClass}`}>
         {skillGroup.list.map((skill: string) => (
           <BadgeTech key={skill} id={skill}></BadgeTech>

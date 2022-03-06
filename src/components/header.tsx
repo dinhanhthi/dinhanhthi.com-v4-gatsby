@@ -16,7 +16,7 @@ export default function Header({
   type,
   options,
 }: {
-  type: HeaderTypes
+  type?: HeaderTypes
   options?: HeaderOptions
 }) {
   const headerDefaultClass = cntl`
@@ -25,11 +25,9 @@ export default function Header({
 
   return (
     <header
-      className={
-        options?.customClasses
-          ? options.customClasses + ' ' + headerDefaultClass
-          : headerDefaultClass
-      }
+      className={`${headerDefaultClass} ${
+        options?.customClasses ? options.customClasses : ''
+      }`}
     >
       <div className="container mx-auto pt-14 lg:w-5/6 xl:w-4/6">
         {getHeaderStyle(type, options)}
@@ -48,7 +46,7 @@ function getHeaderStyle(type: HeaderTypes, options?: HeaderOptions) {
     case 'about':
       return headerAbout(options)
     default:
-      return null
+      return <div>This is a default header</div>
   }
 }
 
@@ -58,30 +56,34 @@ function headerAbout(options?: HeaderOptions) {
       className="mx-auto flex flex-col flex-wrap items-center justify-items-stretch
       p-4 md:flex-row xl:max-w-6xl"
     >
-      {options?.pageTitle && (
-        <h1
-          className={`flex ${ySpacingClass} ${titleClass} w-full justify-center`}
-        >
-          <span
-            className="mr-2 inline-flex h-9 origin-[70%_70%] animate-wave
-                items-center justify-center"
-          >
-            <img
-              src={VictoryHand}
-              alt="Waving hand"
-              className="h-full"
-              width="auto"
-            />
-          </span>
-          {options.pageTitle}
-        </h1>
-      )}
       <div
-        className={`flex ${ySpacingClass} w-full flex-col items-center gap-4 md:flex-row md:gap-5`}
+        className={
+          'mb-7 mt-10 flex w-full flex-col items-center gap-4 md:flex-row md:gap-5'
+        }
       >
-        <p className={'flex-1 text-left text-main dark:text-main-dark'}>
-          {parse(author.longIntro)}
-        </p>
+        <div>
+          {options?.pageTitle && (
+            <h1
+              className={`flex ${titleClass} w-full justify-center md:justify-start`}
+            >
+              <span
+                className="mr-2 inline-flex h-9 origin-[70%_70%] animate-wave
+                items-center justify-center"
+              >
+                <img
+                  src={VictoryHand}
+                  alt="Waving hand"
+                  className="h-full"
+                  width="auto"
+                />
+              </span>
+              {options.pageTitle}
+            </h1>
+          )}
+          <p className={'mt-4 flex-1 text-left text-main dark:text-main-dark'}>
+            {parse(author.longIntro)}
+          </p>
+        </div>
         <div className="w-full rounded-lg border border-slate-300 p-4 dark:border-slate-600 md:w-auto">
           <ul>
             {Object.keys(coordinate).map(key => (
@@ -99,7 +101,7 @@ function headerAbout(options?: HeaderOptions) {
       </div>
       <div
         className={
-          'mt-6 flex w-full flex-wrap items-center justify-center gap-3 md:order-3 md:mt-5'
+          'flex w-full flex-wrap items-center justify-center gap-3 md:order-3 md:mt-8'
         }
       >
         {inforLinks.map(item => (

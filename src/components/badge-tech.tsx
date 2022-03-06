@@ -7,7 +7,7 @@ import techs from '../data/techs'
 import { toggleThemeTransition } from '../styles/common'
 
 export const badgeCodeClass = cntl`
-  rounded-md border bg-slate-50 px-1 py-3 align-baseline text-base shadow-sm
+  rounded-md border bg-stone-100 px-1 py-3 align-baseline text-base shadow-sm
   transition-transform duration-200 hover:-translate-y-0.5 h-6 w-fit
   dark:border-bd-dark dark:bg-[#343e4c] dark:text-main-dark flex items-center justify-center
   ${toggleThemeTransition}`

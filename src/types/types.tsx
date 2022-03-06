@@ -9,7 +9,7 @@ export type NavigationItem = {
   hide?: boolean // always hide
 }
 
-export type HeaderTypes = 'index' | 'about' | 'blog' | 'post'
+export type HeaderTypes = 'index' | 'about' | 'blog' | 'post' | 'notes'
 
 export type HeaderOptions = {
   pageTitle?: string

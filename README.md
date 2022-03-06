@@ -38,4 +38,5 @@ Just add them to `src/main.scss`.
 
 ## References
 
+- [Gatsby Starter Blog](https://github.com/gatsbyjs/gatsby-starter-blog).
 - [Working with images in Gatsby](https://dnlytras.com/blog/gatsby-images/)

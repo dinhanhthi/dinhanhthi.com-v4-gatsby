@@ -17,5 +17,5 @@ export const aLinkClass = cntl`
  * For boxes with code-color background
  */
 export const codeSectionClass = cntl`
-  shadow-lg dark:border dark:border-bd-dark dark:bg-bg-code-dark rounded-lg border bg-white
+  shadow-lg dark:border-bd-dark dark:border dark:bg-bg-code-dark rounded-lg bg-white
   text-main dark:text-main-dark ${toggleThemeTransition}`

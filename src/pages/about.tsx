@@ -14,7 +14,7 @@ export default function AboutPage() {
   const headerOptions = {
     pageTitle: 'About me',
   }
-  const sectionSpacing = 'pt-10'
+  const sectionSpacing = 'pt-12'
 
   return (
     <Base headerType="about" headerOptions={headerOptions}>
