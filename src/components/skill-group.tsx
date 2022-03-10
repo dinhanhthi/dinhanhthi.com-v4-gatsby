@@ -3,7 +3,6 @@ import React from 'react'
 import { SkillGroupType } from '../types/types'
 import BadgeTech from '../components/badge-tech'
 import HeadingAbout from './heading-about'
-import { codeSectionClass } from '../styles/common'
 
 export default function SkillGroup({
   skillGroup,
@@ -15,7 +14,7 @@ export default function SkillGroup({
   return (
     <div className={`${className ? className : ''}`}>
       <HeadingAbout content={skillGroup.name} className="text-3xl" />
-      <div className={`flex flex-wrap gap-2 p-3 ${codeSectionClass}`}>
+      <div className={'thi-box-code flex flex-wrap gap-2 p-3'}>
         {skillGroup.list.map((skill: string) => (
           <BadgeTech key={skill} id={skill}></BadgeTech>
         ))}

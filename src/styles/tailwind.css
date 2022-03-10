@@ -4,6 +4,33 @@
 
 @layer base {
   html {
-    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  }
+}
+
+@layer components {
+  .thi-text-color {
+    @apply text-main dark:text-main-dark;
+  }
+
+  .thi-link {
+    @apply w-fit border-b border-link dark:border-link-dark md:border-none
+    md:hover:text-link md:dark:hover:text-link-dark;
+  }
+
+  .thi-transition-dark {
+    @apply transition-colors duration-200 ease-in-out;
+  }
+
+  .thi-box-code {
+    @apply thi-transition-dark rounded-lg bg-white thi-text-color shadow-lg
+    dark:border dark:border-bd-dark dark:bg-bg-code-dark;
+  }
+
+  .thi-badge-code {
+    @apply thi-transition-dark flex h-6 w-fit items-center justify-center
+    rounded-md border bg-stone-100 px-1 py-3 align-baseline text-base shadow-sm
+    !transition duration-200 ease-in-out hover:-translate-y-0.5 dark:border-bd-dark
+    dark:bg-[#343e4c] thi-text-color;
   }
 }

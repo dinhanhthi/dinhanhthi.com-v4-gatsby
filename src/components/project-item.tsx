@@ -1,8 +1,7 @@
 import React from 'react'
 
 import { Project } from '../types/types'
-import BadgeTech, { badgeCodeClass } from '../components/badge-tech'
-import { aLinkClass, codeSectionClass } from '../styles/common'
+import BadgeTech from '../components/badge-tech'
 
 export default function ProjectItem({
   content,
@@ -15,13 +14,13 @@ export default function ProjectItem({
     <div
       className={`${
         className ? className : ''
-      } ${codeSectionClass} flex flex-col p-4`}
+      } thi-box-code flex flex-col p-4`}
     >
       <h3 className="font-semibold dark:text-white">
         {content.icon && <span className="mr-2">{content.icon}</span>}
         {(content.source || content.url) && (
           <a
-            className={`${aLinkClass}`}
+            className={'thi-link'}
             href={content.source ? content.source : content.url}
             target="_blank"
             rel="noopener noreferrer"
@@ -42,7 +41,9 @@ export default function ProjectItem({
             content.techText.map((item: string, index: number) => (
               <span
                 key={index}
-                className={`${badgeCodeClass} block h-full px-2 font-mono text-[0.8rem]`}
+                className={
+                  'thi-badge-code block h-full px-2 font-mono text-[0.8rem]'
+                }
               >
                 {item}
               </span>

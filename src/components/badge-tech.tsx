@@ -1,16 +1,8 @@
 import React from 'react'
 import Tippy from '@tippyjs/react'
-import cntl from 'cntl'
 
 import { TechItem } from '../types/types'
 import techs from '../data/techs'
-import { toggleThemeTransition } from '../styles/common'
-
-export const badgeCodeClass = cntl`
-  rounded-md border bg-stone-100 px-1 py-3 align-baseline text-base shadow-sm
-  transition-transform duration-200 hover:-translate-y-0.5 h-6 w-fit
-  dark:border-bd-dark dark:bg-[#343e4c] dark:text-main-dark flex items-center justify-center
-  ${toggleThemeTransition}`
 
 export default function BadgeTech({
   id,
@@ -28,7 +20,7 @@ export default function BadgeTech({
       disabled={!hideText}
     >
       <a href={techItem.url}>
-        <div className={badgeCodeClass}>
+        <div className={'thi-badge-code'}>
           <img
             className={`h-5 w-5 ${techItem.imgClass ? techItem.imgClass : ''}`}
             src={techItem.icon}

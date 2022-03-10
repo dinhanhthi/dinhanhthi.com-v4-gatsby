@@ -3,7 +3,6 @@ import React from 'react'
 import { CVItem } from '../types/types'
 import BadgeTech from '../components/badge-tech'
 import parse from 'html-react-parser'
-import { aLinkClass } from '../styles/common'
 
 export default function CVSection({
   cv,
@@ -20,11 +19,7 @@ export default function CVSection({
         {logo(cv)}
         <h4 className="mt-2 text-center text-base font-semibold  dark:text-white ">
           {cv.url && (
-            <a
-              className={`${aLinkClass}`}
-              href={cv.url}
-              rel="noopener noreferrer"
-            >
+            <a className={'thi-link'} href={cv.url} rel="noopener noreferrer">
               {cv.where}
             </a>
           )}
@@ -41,7 +36,7 @@ export default function CVSection({
             </h3>
             <h4 className="text-base  md:hidden">
               {cv.url && (
-                <a className={`${aLinkClass}`} href={cv.url}>
+                <a className={'thi-link'} href={cv.url}>
                   {cv.where}
                 </a>
               )}

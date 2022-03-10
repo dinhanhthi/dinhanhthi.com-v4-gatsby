@@ -2,7 +2,6 @@ import Tippy from '@tippyjs/react'
 import * as React from 'react'
 
 import CoffeeIcon from '../img/coffee.svg'
-import { aLinkClass } from '../styles/common'
 import { navClasses } from './navigation'
 
 export default function Footer({ className }: { className?: string }) {
@@ -12,17 +11,17 @@ export default function Footer({ className }: { className?: string }) {
         className ? className : ''
       } ${navClasses} flex items-center justify-center gap-2 p-4 pb-7`}
     >
-      <a className={aLinkClass} href="{{ '/' | url }}" target="_blank">
+      <a className={'thi-link'} href="{{ '/' | url }}" target="_blank">
         Thi &nbsp;&copy;&nbsp;
         {currentYear()}
       </a>
       &nbsp;&bull;&nbsp;
-      <a className={aLinkClass} href="/about-the-notes/">
+      <a className={'thi-link'} href="/about-the-notes/">
         About this site
       </a>
       &nbsp;&bull;&nbsp;
       <a
-        className={aLinkClass}
+        className={'thi-link'}
         href="https://photos.app.goo.gl/9OVEkdTjmtRPg7vC3"
         target="_blank"
         rel="noopener noreferrer"
@@ -31,7 +30,7 @@ export default function Footer({ className }: { className?: string }) {
       </a>
       &nbsp;&bull;&nbsp;
       <a
-        className={aLinkClass}
+        className={'thi-link'}
         href="https://goo.gl/photos/yQXdQws1LLS16x5v5"
         target="_blank"
         rel="noopener noreferrer"
