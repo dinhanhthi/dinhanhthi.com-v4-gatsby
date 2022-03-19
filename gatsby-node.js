@@ -5,7 +5,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
-  const blogPost = path.resolve('./src/templates/blog-post.tsx')
+  const blogTemplate = path.resolve('./src/templates/blog-template.tsx')
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -19,6 +19,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
+            }
+            frontmatter {
+              icon
             }
           }
         }
@@ -44,14 +47,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+      const pageIcon = post.frontmatter.icon?.includes('header')
+        ? post.frontmatter.icon
+        : 'header/' + post.frontmatter.icon
 
       createPage({
         path: post.fields.slug,
-        component: blogPost,
+        component: blogTemplate,
         context: {
           id: post.id,
           previousPostId,
           nextPostId,
+          icon: pageIcon,
         },
       })
     })
@@ -63,12 +70,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode })
-
-    createNodeField({
-      name: 'slug',
-      node,
-      value,
-    })
+    if (node.fileAbsolutePath.includes('/blog/')) {
+      createNodeField({
+        name: 'slug',
+        node,
+        value: `/blog${value}`,
+      })
+    } else if (node.fileAbsolutePath.includes('/notes/')) {
+      createNodeField({
+        name: 'slug',
+        node,
+        value: `/${value}`,
+      })
+    }
   }
 }
 
@@ -106,6 +120,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      subtitle: String
     }
 
     type Fields {

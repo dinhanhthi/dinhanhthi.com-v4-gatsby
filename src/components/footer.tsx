@@ -9,19 +9,19 @@ export default function Footer({ className }: { className?: string }) {
     <footer
       className={`${
         className ? className : ''
-      } ${navClasses} flex items-center justify-center gap-2 p-4 pb-7`}
+      } ${navClasses} flex flex-wrap items-center justify-center gap-2 p-4 pb-7`}
     >
-      <a className={'thi-link'} href="{{ '/' | url }}" target="_blank">
+      <a className={'thi-link-about'} href="{{ '/' | url }}" target="_blank">
         Thi &nbsp;&copy;&nbsp;
         {currentYear()}
       </a>
       &nbsp;&bull;&nbsp;
-      <a className={'thi-link'} href="/about-the-notes/">
+      <a className={'thi-link-about'} href="/about-the-notes/">
         About this site
       </a>
       &nbsp;&bull;&nbsp;
       <a
-        className={'thi-link'}
+        className={'thi-link-about'}
         href="https://photos.app.goo.gl/9OVEkdTjmtRPg7vC3"
         target="_blank"
         rel="noopener noreferrer"
@@ -30,7 +30,7 @@ export default function Footer({ className }: { className?: string }) {
       </a>
       &nbsp;&bull;&nbsp;
       <a
-        className={'thi-link'}
+        className={'thi-link-about'}
         href="https://goo.gl/photos/yQXdQws1LLS16x5v5"
         target="_blank"
         rel="noopener noreferrer"
@@ -39,9 +39,9 @@ export default function Footer({ className }: { className?: string }) {
       </a>
       &nbsp;&bull;&nbsp;
       <Tippy content="Support Thi" placement="top" arrow={true}>
-        <a className="inline-flex h-4 items-center" href="/support-thi/">
+        <a className="inline-flex h-5 items-center" href="/support-thi/">
           <img
-            className="h-full w-fit"
+            className="h-full w-fit transition-transform duration-300 hover:scale-125"
             src={CoffeeIcon}
             alt="Support Thi"
             height="16"

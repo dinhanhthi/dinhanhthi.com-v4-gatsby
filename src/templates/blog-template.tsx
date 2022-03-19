@@ -2,16 +2,30 @@ import { graphql, Link } from 'gatsby'
 import * as React from 'react'
 import Seo from '../components/seo'
 import Base from '../layouts/base'
+import { HeaderOptions } from '../types/types'
+import { get } from 'lodash'
 
-const BlogPostTemplate = ({ data, location }) => {
+const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark
   const { previous, next } = data
+  const postIcon = data.icon.childImageSharp.gatsbyImageData
+
+  const headerOptions: HeaderOptions = {
+    pageTitle: post.frontmatter.title,
+    pageSubtitle: get(post, 'frontmatter.subtitle'),
+    pageDate: post.frontmatter.date,
+    pageIcon: postIcon,
+    pageTags: post.frontmatter.tags,
+    editLink: `https://github.com/dinhanhthi/content/edit/main/${
+      post.fileAbsolutePath.split('/content/')[1]
+    }`,
+  }
 
   return (
-    <Base headerType="post">
+    <Base headerType="blog" headerOptions={headerOptions}>
       <Seo
         title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        description={post.frontmatter.subtitle || post.excerpt}
       />
       <article
         className="blog-post"
@@ -49,7 +63,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <li>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                {next.frontmatter.title} 👉
               </Link>
             )}
           </li>
@@ -66,10 +80,16 @@ export const pageQuery = graphql`
     $id: String!
     $previousPostId: String
     $nextPostId: String
+    $icon: String
   ) {
     site {
       siteMetadata {
         title
+      }
+    }
+    icon: file(relativePath: { eq: $icon }) {
+      childImageSharp {
+        gatsbyImageData(quality: 90, width: 55, layout: FIXED)
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -79,8 +99,11 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
+        subtitle
+        icon
+        tags
       }
+      fileAbsolutePath
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
       fields {

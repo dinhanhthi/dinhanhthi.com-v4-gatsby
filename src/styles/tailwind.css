@@ -9,13 +9,23 @@
 }
 
 @layer components {
+  .thi-bg {
+    @apply bg-white dark:bg-bg-main-dark;
+  }
+
   .thi-text-color {
     @apply text-main dark:text-main-dark;
   }
 
-  .thi-link {
-    @apply w-fit border-b border-link dark:border-link-dark md:border-none
+  /* Display as normal text except hoving and on small screen */
+  .thi-link-about {
+    @apply md:thi-text-color w-fit text-link dark:text-link-dark
     md:hover:text-link md:dark:hover:text-link-dark;
+  }
+
+  .thi-link {
+    @apply text-link hover:text-pink-500 dark:hover:text-pink-300
+    transition-colors duration-150 dark:text-link-dark;
   }
 
   .thi-transition-dark {
@@ -23,14 +33,18 @@
   }
 
   .thi-box-code {
-    @apply thi-transition-dark rounded-lg bg-white thi-text-color shadow-lg
-    dark:border dark:border-bd-dark dark:bg-bg-code-dark;
+    @apply thi-transition-dark thi-bg thi-text-color rounded-lg shadow-lg
+    dark:border dark:border-bd-dark;
   }
 
   .thi-badge-code {
-    @apply thi-transition-dark flex h-6 w-fit items-center justify-center
-    rounded-md border bg-stone-100 px-1 py-3 align-baseline text-base shadow-sm
-    !transition duration-200 ease-in-out hover:-translate-y-0.5 dark:border-bd-dark
-    dark:bg-[#343e4c] thi-text-color;
+    @apply thi-transition-dark thi-text-color flex h-6 w-fit items-center
+    justify-center rounded-md border bg-stone-100 px-1 align-baseline text-base
+    shadow-sm !transition duration-200 ease-in-out hover:-translate-y-0.5
+    dark:border-bd-dark dark:bg-[#343e4c];
+  }
+
+  .thi-title {
+    @apply thi-text-color font-heading text-3xl font-semibold;
   }
 }

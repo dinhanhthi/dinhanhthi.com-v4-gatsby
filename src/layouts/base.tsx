@@ -35,7 +35,7 @@ export default function Base({
   }, [])
 
   return (
-    <div className={'bg-white dark:bg-bg-main-dark'}>
+    <div className={'thi-bg thi-text-color'}>
       <Navigation
         theme={theme as SiteTheme}
         onUpdateTheme={() => onUpdateTheme(theme as SiteTheme)}

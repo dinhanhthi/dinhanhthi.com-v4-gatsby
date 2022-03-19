@@ -17,7 +17,7 @@ export default function HeadingAbout({
         after:opacity-40 ${className}
       `}
     >
-      <h2 className="font-heading text-2xl font-semibold text-main dark:text-main-dark">
+      <h2 className="thi-text-color font-heading text-2xl font-semibold">
         {content}
       </h2>
     </div>

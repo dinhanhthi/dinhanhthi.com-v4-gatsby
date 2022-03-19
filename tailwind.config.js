@@ -41,7 +41,8 @@ module.exports = {
         'bg-nav-dark': '#323541',
         'bd-dark': '#3b3e54',
         link: '#2563eb', // blue-600
-        'link-dark': '#fcd34d', // amber-300
+        // 'link-dark': '#fcd34d', // amber-300
+        'link-dark': '#ffd479',
       },
     },
   },

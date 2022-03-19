@@ -1,6 +1,7 @@
 import * as React from 'react'
 import parse from 'html-react-parser'
 import cntl from 'cntl'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import { HeaderOptions, HeaderTypes } from '../types/types'
 
@@ -11,6 +12,8 @@ import { author } from '../data/me'
 import { socials, inforLinks, coordinate } from '../data/me'
 import BadgeSocial from './badge-social'
 import BadgeInfos from './badge-infos'
+import { Link } from 'gatsby'
+import { getLastModified, slugify } from '../utils/helpers'
 
 export default function Header({
   type,
@@ -37,7 +40,6 @@ export default function Header({
 }
 
 const ySpacingClass = 'mt-6 md:mt-4'
-const titleClass = cntl`text-3xl text-main dark:text-main-dark font-heading font-semibold`
 
 function getHeaderStyle(type: HeaderTypes, options?: HeaderOptions) {
   switch (type) {
@@ -45,9 +47,51 @@ function getHeaderStyle(type: HeaderTypes, options?: HeaderOptions) {
       return headerIndex(options)
     case 'about':
       return headerAbout(options)
+    case 'blog':
+      return headerBlog(options)
     default:
       return <div>This is a default header</div>
   }
+}
+
+function headerBlog(options?: HeaderOptions) {
+  return (
+    <div className="mx-auto flex flex-col flex-wrap items-center justify-center p-4">
+      <GatsbyImage
+        class="mt-5"
+        alt={options.pageTitle}
+        image={options.pageIcon}
+      />
+      <h1 className="thi-title mt-4">{options.pageTitle}</h1>
+      {options.pageSubtitle && (
+        <h3 className="mt-1 text-lg">{options.pageSubtitle}</h3>
+      )}
+      {options.pageTags && (
+        <div className="border-1 mt-3 border-b px-4 pb-2 text-center dark:border-stone-500">
+          {options.pageTags.map(tag => (
+            <Link
+              className="thi-link mr-2"
+              key={tag}
+              to={`/tag/${slugify(tag)}/`}
+            >
+              #{tag}
+            </Link>
+          ))}
+        </div>
+      )}
+      {options.pageDate && (
+        <div className="mt-1 pt-2 text-center italic">
+          <span className="mr-1">
+            Last modified {getLastModified(options.pageDate)}
+          </span>
+          /
+          <a className="thi-link ml-1" href={options.editLink}>
+            Edit on Github
+          </a>
+        </div>
+      )}
+    </div>
+  )
 }
 
 function headerAbout(options?: HeaderOptions) {
@@ -64,7 +108,9 @@ function headerAbout(options?: HeaderOptions) {
         <div>
           {options?.pageTitle && (
             <h1
-              className={`flex ${titleClass} w-full justify-center md:justify-start`}
+              className={
+                'thi-title flex w-full justify-center md:justify-start'
+              }
             >
               <span
                 className="mr-2 inline-flex h-9 origin-[70%_70%] animate-wave
@@ -80,7 +126,7 @@ function headerAbout(options?: HeaderOptions) {
               {options.pageTitle}
             </h1>
           )}
-          <p className={'mt-4 flex-1 text-left text-main dark:text-main-dark'}>
+          <p className={'thi-text-color mt-4 flex-1 text-left'}>
             {parse(author.longIntro)}
           </p>
         </div>
@@ -129,7 +175,7 @@ function headerIndex(options?: HeaderOptions) {
       <div className="md:order-1 md:flex-1">
         {options?.pageTitle && (
           <h1
-            className={`flex ${ySpacingClass} ${titleClass} justify-center md:justify-start`}
+            className={`flex ${ySpacingClass} thi-title justify-center md:justify-start`}
           >
             <span
               className="mr-2 inline-flex h-9 origin-[70%_70%] animate-wave
@@ -146,7 +192,7 @@ function headerIndex(options?: HeaderOptions) {
           </h1>
         )}
         <p
-          className={`max-w-full ${ySpacingClass} text-center text-main dark:text-main-dark md:text-left`}
+          className={`max-w-full ${ySpacingClass} thi-text-color text-center md:text-left`}
         >
           {parse(author.shortIntro)}
         </p>

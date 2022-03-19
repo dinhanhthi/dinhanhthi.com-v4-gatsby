@@ -12,15 +12,13 @@ export default function ProjectItem({
 }) {
   return (
     <div
-      className={`${
-        className ? className : ''
-      } thi-box-code flex flex-col p-4`}
+      className={`${className ? className : ''} thi-box-code flex flex-col p-4`}
     >
       <h3 className="font-semibold dark:text-white">
         {content.icon && <span className="mr-2">{content.icon}</span>}
         {(content.source || content.url) && (
           <a
-            className={'thi-link'}
+            className={'thi-link-about'}
             href={content.source ? content.source : content.url}
             target="_blank"
             rel="noopener noreferrer"
@@ -41,11 +39,9 @@ export default function ProjectItem({
             content.techText.map((item: string, index: number) => (
               <span
                 key={index}
-                className={
-                  'thi-badge-code block h-full px-2 font-mono text-[0.8rem]'
-                }
+                className={'thi-badge-code px-2 font-mono text-[0.8rem]'}
               >
-                {item}
+                <span className="block h-full">{item}</span>
               </span>
             ))}
         </div>

@@ -14,6 +14,22 @@ export type HeaderTypes = 'index' | 'about' | 'blog' | 'post' | 'notes'
 export type HeaderOptions = {
   pageTitle?: string
   customClasses?: string
+  pageSubtitle?: string
+  pageIcon?: any
+  pageDate?: string
+  pageTags?: string[]
+  pageCategory?: Category
+  editLink?: string
+}
+
+export type Tag = {
+  name?: string
+  slug: string
+}
+
+export type Category = {
+  name: string
+  slug: string
 }
 
 export type SocialBadge = {

@@ -25,6 +25,11 @@ npm i
 npm link eslint
 ```
 
+## Notes
+
+1. Tag: `tags: [mlops, Thu Nghiem]` => slugs: `mlops`, `thu-nghiem`
+2. Post icon: `icon: airflow.svg` or `icon: header/airflow.svg` (all icons must be stored in `/src/img/header/`)
+
 ## Fake dark
 
 Open dev tool > ctrl + shift + p > Emulate CSS prefers-color-scheme: dark / light.
@@ -50,6 +55,10 @@ createNodeField({
   value: `/blog${value}`,
 })
 ```
+
+---
+
+
 
 ## Tailwind things
 
