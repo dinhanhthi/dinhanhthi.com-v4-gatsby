@@ -1,12 +1,14 @@
 import { graphql, Link } from 'gatsby'
 import * as React from 'react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+
 import Seo from '../components/seo'
 import Base from '../layouts/base'
 import { HeaderOptions } from '../types/types'
 import { get } from 'lodash'
 
 const BlogPostTemplate = ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.mdx
   const { previous, next } = data
   const postIcon = data.icon.childImageSharp.gatsbyImageData
 
@@ -36,10 +38,7 @@ const BlogPostTemplate = ({ data }) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+        <MDXRenderer>{post.body}</MDXRenderer>
         <hr />
         <footer></footer>
       </article>
@@ -92,10 +91,10 @@ export const pageQuery = graphql`
         gatsbyImageData(quality: 90, width: 55, layout: FIXED)
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
@@ -105,7 +104,7 @@ export const pageQuery = graphql`
       }
       fileAbsolutePath
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
+    previous: mdx(id: { eq: $previousPostId }) {
       fields {
         slug
       }
@@ -113,7 +112,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
+    next: mdx(id: { eq: $nextPostId }) {
       fields {
         slug
       }

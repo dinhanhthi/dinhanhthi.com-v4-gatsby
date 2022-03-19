@@ -25,10 +25,17 @@ npm i
 npm link eslint
 ```
 
-## Notes
+## Notes for writing
 
 1. Tag: `tags: [mlops, Thu Nghiem]` => slugs: `mlops`, `thu-nghiem`
 2. Post icon: `icon: airflow.svg` or `icon: header/airflow.svg` (all icons must be stored in `/src/img/header/`)
+
+## Using Mdx
+
+- [Migrate remark to mdx](https://www.gatsbyjs.com/docs/how-to/routing/migrate-remark-to-mdx/)
+- [gatsby-plugin-mdx](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/)
+- Create and using shortcode like `<Youtube />`: [read this](https://www.gatsbyjs.com/docs/how-to/routing/migrate-remark-to-mdx/).
+- [Mdx components](https://mdxjs.com/table-of-components/)
 
 ## Fake dark
 
