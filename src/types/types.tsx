@@ -9,7 +9,9 @@ export type NavigationItem = {
   hide?: boolean // always hide
 }
 
-export type HeaderTypes = 'index' | 'about' | 'blog' | 'post' | 'notes'
+export type HeaderTypes = 'index' | 'about' | 'blog' | 'post' | 'note'
+
+export type PostTypes = 'blog' | 'note'
 
 export type HeaderOptions = {
   pageTitle?: string
@@ -20,6 +22,7 @@ export type HeaderOptions = {
   pageTags?: string[]
   pageCategory?: Category
   editLink?: string
+  postType?: PostTypes
 }
 
 export type Tag = {

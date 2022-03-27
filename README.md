@@ -37,6 +37,10 @@ npm link eslint
 - Create and using shortcode like `<Youtube />`: [read this](https://www.gatsbyjs.com/docs/how-to/routing/migrate-remark-to-mdx/).
 - [Mdx components](https://mdxjs.com/table-of-components/)
 
+### Create a new field / node in mdx
+
+Read [this](https://www.gatsbyjs.com/docs/reference/config-files/actions/#createNodeField) using `createNodeField`.
+
 ## Fake dark
 
 Open dev tool > ctrl + shift + p > Emulate CSS prefers-color-scheme: dark / light.
@@ -64,7 +68,6 @@ createNodeField({
 ```
 
 ---
-
 
 
 ## Tailwind things

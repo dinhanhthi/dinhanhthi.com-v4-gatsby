@@ -12,13 +12,16 @@ export default function ProjectItem({
 }) {
   return (
     <div
-      className={`${className ? className : ''} thi-box-code flex flex-col p-4`}
+      className={`${
+        className ? className : ''
+      } group thi-box-code flex flex-col p-4`}
     >
       <h3 className="font-semibold dark:text-white">
         {content.icon && <span className="mr-2">{content.icon}</span>}
         {(content.source || content.url) && (
           <a
-            className={'thi-link-about'}
+            className={`hover:!text-pink-500 group-hover:text-link
+              dark:hover:!text-pink-300 dark:group-hover:text-link-dark`}
             href={content.source ? content.source : content.url}
             target="_blank"
             rel="noopener noreferrer"

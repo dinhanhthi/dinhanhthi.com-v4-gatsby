@@ -10,17 +10,18 @@ import { get } from 'lodash'
 const BlogPostTemplate = ({ data }) => {
   const post = data.mdx
   const { previous, next } = data
-  const postIcon = data.icon.childImageSharp.gatsbyImageData
+  const postIcon = data.icon?.childImageSharp?.gatsbyImageData
 
   const headerOptions: HeaderOptions = {
     pageTitle: post.frontmatter.title,
     pageSubtitle: get(post, 'frontmatter.subtitle'),
-    pageDate: post.frontmatter.date,
+    pageDate: post.fields.date,
     pageIcon: postIcon,
     pageTags: post.frontmatter.tags,
     editLink: `https://github.com/dinhanhthi/content/edit/main/${
       post.fileAbsolutePath.split('/content/')[1]
     }`,
+    postType: post.fileAbsolutePath.includes('/blog/') ? 'blog' : 'note',
   }
 
   return (
@@ -95,9 +96,11 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       body
+      fields {
+        date(formatString: "MMMM DD, YYYY")
+      }
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
         subtitle
         icon
         tags

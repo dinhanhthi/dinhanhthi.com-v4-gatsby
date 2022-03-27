@@ -32,3 +32,30 @@ export function getLastModified(date: string): string {
     return Math.round(durationInDays / 365) + ' years ago'
   }
 }
+
+/**
+ * Find the display date for posts
+ */
+export function getDisplayDate(date: string): string {
+  const dateObj = new Date(date)
+  const durationInDays =
+    (new Date().getTime() - dateObj.getTime()) / (1000 * 60 * 60 * 24)
+  if (durationInDays < 1) {
+    return 'today'
+  } else if (durationInDays < 2) {
+    return 'yesterday'
+  } else if (durationInDays < 7) {
+    return 'this week'
+  } else {
+    const join = function (t, a, s) {
+      function format(m) {
+        let f = new Intl.DateTimeFormat('en', m)
+        return f.format(t)
+      }
+      return a.map(format).join(s)
+    }
+    let a = [{ day: 'numeric' }, { month: 'short' }, { year: 'numeric' }]
+    let s = join(new Date(date), a, '/')
+    return s
+  }
+}

@@ -8,6 +8,9 @@ import { HeaderOptions, HeaderTypes } from '../types/types'
 import AvatarEmoji from '../img/avatar_memoji.webp'
 import WavingHand from '../img/waving_hand.webp'
 import VictoryHand from '../img/victory_hand.webp'
+import BlogDefaultIcon from '../img/blog-default.svg'
+import NoteDefaultIcon from '../img/note-default.svg'
+
 import { author } from '../data/me'
 import { socials, inforLinks, coordinate } from '../data/me'
 import BadgeSocial from './badge-social'
@@ -49,19 +52,33 @@ function getHeaderStyle(type: HeaderTypes, options?: HeaderOptions) {
       return headerAbout(options)
     case 'blog':
       return headerBlog(options)
+    case 'note':
+      return headerBlog(options)
     default:
       return <div>This is a default header</div>
   }
 }
 
 function headerBlog(options?: HeaderOptions) {
+  const DefaultIcon =
+    options.postType === 'note' ? NoteDefaultIcon : BlogDefaultIcon
   return (
     <div className="mx-auto flex flex-col flex-wrap items-center justify-center p-4">
-      <GatsbyImage
-        class="mt-5"
-        alt={options.pageTitle}
-        image={options.pageIcon}
-      />
+      {options.pageIcon && (
+        <GatsbyImage
+          class="mt-5"
+          alt={options.pageTitle}
+          image={options.pageIcon}
+        />
+      )}
+      {!options.pageIcon && (
+        <img
+          src={DefaultIcon}
+          alt="Default icon"
+          className="mt-5 h-[55px]"
+          width="auto"
+        />
+      )}
       <h1 className="thi-title mt-4">{options.pageTitle}</h1>
       {options.pageSubtitle && (
         <h3 className="mt-1 text-lg">{options.pageSubtitle}</h3>

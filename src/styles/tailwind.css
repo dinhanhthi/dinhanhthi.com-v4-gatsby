@@ -17,15 +17,15 @@
     @apply text-main dark:text-main-dark;
   }
 
-  /* Display as normal text except hoving and on small screen */
+  /* Display as normal text except hoving or on small screen */
   .thi-link-about {
     @apply md:thi-text-color w-fit text-link dark:text-link-dark
-    md:hover:text-link md:dark:hover:text-link-dark;
+    md:hover:text-pink-500 md:dark:hover:text-link-dark;
   }
 
   .thi-link {
-    @apply text-link hover:text-pink-500 dark:hover:text-pink-300
-    transition-colors duration-150 dark:text-link-dark;
+    @apply text-link transition-colors duration-150
+    hover:text-pink-500 dark:text-link-dark dark:hover:text-pink-300;
   }
 
   .thi-transition-dark {

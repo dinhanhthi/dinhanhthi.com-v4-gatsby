@@ -69,20 +69,48 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === 'Mdx') {
-    const value = createFilePath({ node, getNode })
-    if (node.fileAbsolutePath.includes('/blog/')) {
-      createNodeField({
-        name: 'slug',
-        node,
-        value: `/blog${value}`,
-      })
-    } else if (node.fileAbsolutePath.includes('/notes/')) {
-      createNodeField({
-        name: 'slug',
-        node,
-        value: `/${value}`,
-      })
-    }
+    let value = createFilePath({
+      node,
+      getNode,
+    })
+
+    /* For posts like "2022-01-01-name-of-post.md" */
+    const re = /^\/20[0-9][0-9]-[0-1][0-9]-[0-3][0-9]-/g
+
+    const createdDate = value.match(re)
+      ? new Date(value.match(re)[0].slice(1, -1))
+      : node.frontmatter.createdDate
+      ? new Date(node.frontmatter.createdDate)
+      : node.frontmatter.date
+      ? new Date(node.frontmatter.date)
+      : new Date('2020-04-26')
+    createNodeField({
+      name: 'createdDate',
+      node,
+      value: createdDate,
+    })
+
+    const date = node.frontmatter.date
+      ? new Date(node.frontmatter.date)
+      : value.match(re)
+      ? new Date(value.match(re)[0].slice(1, -1))
+      : new Date('2020-04-26')
+
+    createNodeField({
+      name: 'date',
+      node,
+      value: date,
+    })
+
+    value = value.replace(re, '/')
+    const slug = node.fileAbsolutePath.includes('/blog/')
+      ? `/blog${value}`
+      : value
+    createNodeField({
+      name: 'slug',
+      node,
+      value: slug,
+    })
   }
 }
 
