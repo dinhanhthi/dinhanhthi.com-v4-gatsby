@@ -25,6 +25,21 @@ npm i
 npm link eslint
 ```
 
+## Ipsum
+
+Check [the examples](https://github.com/fatihtelis/react-lorem-ipsum).
+
+```
+---
+title: "All-in-One Components"
+tags: [mlops, ml, thu nghiem]
+---
+
+import { LoremIpsum } from 'react-lorem-ipsum';
+
+<LoremIpsum p={2} />
+```
+
 ## Notes for writing
 
 1. Tag: `tags: [mlops, Thu Nghiem]` => slugs: `mlops`, `thu-nghiem`

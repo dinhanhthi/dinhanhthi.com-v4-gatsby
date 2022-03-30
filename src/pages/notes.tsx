@@ -13,17 +13,15 @@ export default function NotesPage({ data }) {
 
   return (
     <Base headerType="note" headerOptions={headerOptions}>
-      <div className="bg-stone-100 dark:bg-transparent">
-        <div className={'container mx-auto py-4 px-3'}>
-          <ol className="list-decimal">
-            {data.allMdx.nodes.map(node => (
-              <li key={node.fields.slug}>
-                <Link to={node.fields.slug}>{node.frontmatter.title}</Link> —{' '}
-                <span>{getDisplayDate(node.fields.date)}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
+      <div className={'container mx-auto py-4 px-3'}>
+        <ol className="list-decimal">
+          {data.allMdx.nodes.map(node => (
+            <li key={node.fields.slug}>
+              <Link to={node.fields.slug}>{node.frontmatter.title}</Link> —{' '}
+              <span>{getDisplayDate(node.fields.date)}</span>
+            </li>
+          ))}
+        </ol>
       </div>
     </Base>
   )

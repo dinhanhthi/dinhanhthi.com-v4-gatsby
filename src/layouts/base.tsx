@@ -50,7 +50,9 @@ export default function Base({
         }}
       />
       <WaveSplit />
-      <main role="main">{children}</main>
+      <main role="main" className="bg-stone-100 dark:bg-transparent">
+        {children}
+      </main>
       <WaveSplit footer={true} />
       <Footer />
     </div>

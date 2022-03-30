@@ -2,14 +2,13 @@ import { graphql, Link } from 'gatsby'
 import * as React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Seo from '../components/seo'
 import Base from '../layouts/base'
 import { HeaderOptions } from '../types/types'
 import { get } from 'lodash'
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.mdx
-  const { previous, next } = data
+  // const { previous, next } = data
   const postIcon = data.icon?.childImageSharp?.gatsbyImageData
 
   const headerOptions: HeaderOptions = {
@@ -26,49 +25,12 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <Base headerType="blog" headerOptions={headerOptions}>
-      <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.subtitle || post.excerpt}
-      />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <MDXRenderer>{post.body}</MDXRenderer>
-        <hr />
+      <article itemScope itemType="http://schema.org/Article">
+        <div className={'prose mx-auto max-w-4xl px-6'}>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
         <footer></footer>
       </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} 👉
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
     </Base>
   )
 }
