@@ -24,7 +24,7 @@ export default function Header({
   type?: HeaderTypes
   options?: HeaderOptions
 }) {
-  const headerDefaultClass = 'bg-gradient-to-b from-bg-main-dark to-bg-nav-dark'
+  const headerDefaultClass = 'bg-gradient-to-b from-main-dark-bg to-nav-dark-bg'
 
   return (
     <header

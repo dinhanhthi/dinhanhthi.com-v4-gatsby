@@ -40,10 +40,10 @@ module.exports = {
       colors: {
         main: '#1e293b',
         'main-dark': '#f8fafc',
-        'bg-code-dark': '#2f3240',
-        'bg-main-dark': '#282a36',
-        'bg-nav-dark': '#323541',
-        'bd-dark': '#3b3e54',
+        'main-dark-bg': '#282a36',
+        'nav-dark-bg': '#323541',
+        'code-dark-bg': '#343e4c',
+        'dark-border': '#3b3e54',
         link: '#2563eb', // blue-600
         // 'link-dark': '#fcd34d', // amber-300
         'link-dark': '#ffd479',

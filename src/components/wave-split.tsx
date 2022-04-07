@@ -12,10 +12,10 @@ export default function WaveSplit({
       <div
         className={`h-8 ${
           !footer
-            ? 'bg-bg-nav-dark'
+            ? 'bg-nav-dark-bg'
             : !splitBgStone
-            ? 'bg-white dark:bg-bg-main-dark'
-            : 'thi-bg-stone dark:bg-bg-main-dark'
+            ? 'bg-white dark:bg-main-dark-bg'
+            : 'thi-bg-stone dark:bg-main-dark-bg'
         }`}
       ></div>
       <div
@@ -34,9 +34,9 @@ export default function WaveSplit({
         className={`${
           !footer
             ? !splitBgStone
-              ? 'h-8 bg-white dark:bg-bg-main-dark'
-              : 'thi-bg-stone h-8 dark:bg-bg-main-dark'
-            : 'h-4 bg-bg-nav-dark'
+              ? 'h-8 bg-white dark:bg-main-dark-bg'
+              : 'thi-bg-stone h-8 dark:bg-main-dark-bg'
+            : 'h-4 bg-nav-dark-bg'
         }`}
       ></div>
     </>

@@ -22,7 +22,7 @@ const iconSizeClass = 'w-6 h-6'
 const groupSpaceClass = 'ml-2 md:ml-4'
 export const navHeightClass = 'h-14'
 export const navClasses =
-  'bg-bg-nav-dark shadow-transparent text-slate-700 text-gray-300'
+  'bg-nav-dark-bg shadow-transparent text-slate-700 text-gray-300'
 
 const langMenus = [
   {

@@ -87,9 +87,14 @@ createNodeField({
 
 ## Tailwind things
 
+### Markdown styles with `prose`
+
+Custom elements [here](https://tailwindcss.com/docs/typography-plugin#adapting-to-dark-mode).
+
+### Important
 Using `!important` like `!transition` or `sm:hover:!tw-font-bold` ([ref](https://v2.tailwindcss.com/docs/just-in-time-mode#built-in-important-modifier))
 
----
+### Custom classes
 
 Using `@apply` for a group of classes, [ref](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply).
 
@@ -106,9 +111,9 @@ Also a custom class like
 }
 ```
 
----
+### Understanding `@layer`
 
-Understanding `@layer`: [ref](https://tailwindcss.com/docs/functions-and-directives#layer).
+👉 [Read more](https://tailwindcss.com/docs/functions-and-directives#layer).
 
 Difference between `base`, `components` and `utilities`, [read here](https://darkghosthunter.medium.com/tailwind-the-base-the-components-and-the-utilities-a81137c52534).
 
