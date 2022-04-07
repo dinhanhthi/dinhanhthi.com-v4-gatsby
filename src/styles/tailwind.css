@@ -76,4 +76,28 @@
   .thi-title {
     @apply font-heading text-3xl font-semibold text-main-dark;
   }
+
+  /* thi-prose */
+  .thi-prose-code-dark {
+    @apply prose-code:dark:text-shadow-none prose-code:dark:bg-code-dark-bg
+    prose-code:dark:text-white;
+  }
+
+  .thi-prose-code-main {
+    @apply prose-code:!font-mono prose-code:!text-sm prose-code:font-normal
+    prose-code:before:pl-1 prose-code:before:content-[''] prose-code:after:pr-1
+    prose-code:after:content-[''];
+  }
+
+  .thi-prose-code-heading {
+    @apply prose-code:prose-h2:!text-xl prose-code:prose-h3:!text-lg prose-code:prose-h4:!text-base;
+  }
+
+  .thi-prose-code {
+    @apply thi-prose-code-dark thi-prose-code-main thi-prose-code-heading;
+  }
+
+  .thi-prose {
+    @apply thi-prose-code prose prose-strong:font-medium dark:prose-invert;
+  }
 }

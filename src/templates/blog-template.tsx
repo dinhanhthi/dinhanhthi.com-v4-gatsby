@@ -26,7 +26,7 @@ const BlogPostTemplate = ({ data }) => {
   return (
     <Base headerType="blog" headerOptions={headerOptions}>
       <article itemScope itemType="http://schema.org/Article">
-        <div className={'prose mx-auto max-w-4xl px-6'}>
+        <div className={'thi-prose mx-auto max-w-4xl px-6'}>
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
         <footer></footer>
