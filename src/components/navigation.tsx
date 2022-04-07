@@ -17,15 +17,12 @@ import { author } from '../data/me'
 import navigation from '../data/navs'
 import { SiteTheme } from '../types/types'
 
-const textClass = cntl`
-  md:hover:bg-stone-100 md:hover:text-sky-900 dark:md:bg-transparent dark:md:hover:text-white
-  dark:md:hover:bg-gray-700`
+const textClass = 'md:hover:text-white md:hover:bg-gray-700'
 const iconSizeClass = 'w-6 h-6'
 const groupSpaceClass = 'ml-2 md:ml-4'
 export const navHeightClass = 'h-14'
 export const navClasses =
-  'bg-white dark:bg-bg-nav-dark dark:shadow-transparent text-slate-700 dark:text-gray-300'
-const bgActiveClass = 'dark:bg-[#272727]'
+  'bg-bg-nav-dark shadow-transparent text-slate-700 text-gray-300'
 
 const langMenus = [
   {
@@ -113,8 +110,8 @@ export default function Navigation({
                     <div
                       className={`
                         relative ${groupSpaceClass} flex h-10 w-full items-center
-                        overflow-hidden rounded-lg bg-stone-100
-                        focus-within:shadow-inner ${bgActiveClass}
+                        overflow-hidden rounded-lg bg-[#282a36]
+                        focus-within:shadow-inner
                       `}
                     >
                       <div
@@ -148,6 +145,7 @@ export default function Navigation({
                       content={`${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
                       placement="bottom"
                       arrow={false}
+                      className="hidden md:block"
                     >
                       <button
                         className={`group rounded-lg p-2 ${textClass} focus:outline-none`}
@@ -165,7 +163,12 @@ export default function Navigation({
                         )}
                       </button>
                     </Tippy>
-                    <Tippy content="My Github" placement="bottom" arrow={false}>
+                    <Tippy
+                      content="My Github"
+                      placement="bottom"
+                      arrow={false}
+                      className="hidden md:block"
+                    >
                       <a
                         className={`group hidden rounded-lg p-2 sm:block ${textClass} focus:outline-none
                       `}
@@ -255,9 +258,7 @@ function classNames(...classes: string[]) {
 function isActive({ isCurrent }) {
   return {
     className: classNames(
-      isCurrent
-        ? `bg-sky-100 text-sky-900 ${bgActiveClass} dark:text-white`
-        : textClass,
+      isCurrent ? 'bg-[#282a36] text-white' : textClass,
       cntl`block px-3 py-1.5 rounded-md text-base font-medium text-center
         h-14md:h-full flex items-center justify-center`
     ),

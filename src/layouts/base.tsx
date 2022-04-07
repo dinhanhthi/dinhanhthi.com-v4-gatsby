@@ -11,10 +11,14 @@ export default function Base({
   children,
   headerType,
   headerOptions,
+  className,
+  splitBgStone,
 }: {
   children: React.ReactNode
   headerType: HeaderTypes
   headerOptions?: HeaderOptions
+  className?: string
+  splitBgStone?: boolean
 }) {
   const [theme, setTheme] = useState(siteConfig.defaultTheme)
   const onUpdateTheme = (theme: SiteTheme) => {
@@ -35,7 +39,7 @@ export default function Base({
   }, [])
 
   return (
-    <div className={'thi-bg thi-text-color'}>
+    <div className={`thi-bg thi-text-color${className ? ' ' + className : ''}`}>
       <Navigation
         theme={theme as SiteTheme}
         onUpdateTheme={() => onUpdateTheme(theme as SiteTheme)}
@@ -49,11 +53,11 @@ export default function Base({
             : null,
         }}
       />
-      <WaveSplit />
-      <main role="main" className="bg-stone-100 dark:bg-transparent">
+      <WaveSplit splitBgStone={splitBgStone} />
+      <main role="main" className="bg-transparent">
         {children}
       </main>
-      <WaveSplit footer={true} />
+      <WaveSplit footer={true} splitBgStone={splitBgStone} />
       <Footer />
     </div>
   )

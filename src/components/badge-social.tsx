@@ -8,8 +8,8 @@ export default function BadgeSocial({ options }: { options: SocialBadge }) {
     <Tippy content={options.title} placement="bottom" arrow={false}>
       <a
         className={`
-          group block h-12 w-12 rounded-2xl bg-sky-100 p-2 shadow-sm
-          dark:bg-bg-code-dark dark:shadow-none md:h-10 md:w-10 md:p-1.5
+          group block h-12 w-12 rounded-2xl bg-gray-700 p-2
+          shadow-none md:h-10 md:w-10 md:p-1.5
         `}
         href={options.url}
         target="_blank"

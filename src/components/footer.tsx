@@ -11,17 +11,21 @@ export default function Footer({ className }: { className?: string }) {
         className ? className : ''
       } ${navClasses} flex flex-wrap items-center justify-center gap-2 p-4 pb-7`}
     >
-      <a className={'thi-link-about'} href="{{ '/' | url }}" target="_blank">
+      <a
+        className={'thi-link-normal-always-dark'}
+        href="{{ '/' | url }}"
+        target="_blank"
+      >
         Thi &nbsp;&copy;&nbsp;
         {currentYear()}
       </a>
       &nbsp;&bull;&nbsp;
-      <a className={'thi-link-about'} href="/about-the-notes/">
+      <a className={'thi-link-normal-always-dark'} href="/about-the-notes/">
         About this site
       </a>
       &nbsp;&bull;&nbsp;
       <a
-        className={'thi-link-about'}
+        className={'thi-link-normal-always-dark'}
         href="https://photos.app.goo.gl/9OVEkdTjmtRPg7vC3"
         target="_blank"
         rel="noopener noreferrer"
@@ -30,7 +34,7 @@ export default function Footer({ className }: { className?: string }) {
       </a>
       &nbsp;&bull;&nbsp;
       <a
-        className={'thi-link-about'}
+        className={'thi-link-normal-always-dark'}
         href="https://goo.gl/photos/yQXdQws1LLS16x5v5"
         target="_blank"
         rel="noopener noreferrer"

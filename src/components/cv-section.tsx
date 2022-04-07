@@ -20,7 +20,7 @@ export default function CVSection({
         <h4 className="mt-2 text-center text-base font-semibold  dark:text-white ">
           {cv.url && (
             <a
-              className={'thi-link-about'}
+              className={'thi-link-normal'}
               href={cv.url}
               rel="noopener noreferrer"
             >
@@ -40,7 +40,7 @@ export default function CVSection({
             </h3>
             <h4 className="text-base  md:hidden">
               {cv.url && (
-                <a className={'thi-link-about'} href={cv.url}>
+                <a className={'thi-link-normal'} href={cv.url}>
                   {cv.where}
                 </a>
               )}

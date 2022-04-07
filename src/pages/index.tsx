@@ -26,7 +26,12 @@ export default function IndexPage({ data }) {
   }
 
   return (
-    <Base headerType="index" headerOptions={headerOptions}>
+    <Base
+      headerType="index"
+      headerOptions={headerOptions}
+      splitBgStone={true}
+      className="thi-bg-stone"
+    >
       <Seo title="Index page" />
       {/*
       <ol style={{ listStyle: 'none' }}>

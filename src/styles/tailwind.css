@@ -13,19 +13,31 @@
     @apply bg-white dark:bg-bg-main-dark;
   }
 
+  /* Don't forget to change manually for "wave-stone" and "wave-footer-stone" classes in tailwind.config.js */
+  .thi-bg-stone {
+    @apply bg-stone-100;
+  }
+
   .thi-text-color {
     @apply text-main dark:text-main-dark;
   }
 
   /* Display as normal text except hoving or on small screen */
-  .thi-link-about {
+  .thi-link-normal {
     @apply md:thi-text-color w-fit text-link dark:text-link-dark
     md:hover:text-pink-500 md:dark:hover:text-link-dark;
+  }
+  /* For bg always in dark mode */
+  .thi-link-normal-always-dark {
+    @apply w-fit text-link-dark md:text-main-dark md:hover:text-link-dark;
   }
 
   .thi-link {
     @apply text-link transition-colors duration-150
     hover:text-pink-500 dark:text-link-dark dark:hover:text-pink-300;
+  }
+  .thi-link-always-dark {
+    @apply text-link-dark transition-colors duration-150 hover:text-pink-300;
   }
 
   .thi-transition-dark {
@@ -45,6 +57,6 @@
   }
 
   .thi-title {
-    @apply thi-text-color font-heading text-3xl font-semibold;
+    @apply font-heading text-3xl font-semibold text-main-dark;
   }
 }

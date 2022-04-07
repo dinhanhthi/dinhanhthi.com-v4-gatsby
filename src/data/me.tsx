@@ -21,9 +21,9 @@ export const author = {
   stackexchange:
     'https://stackexchange.com/users/1344291/anh-thi-dinh?tab=accounts',
   shortIntro:
-    'I am a Vietnamese with a curious mind. I would like to learn something new every day. I also have a PhD in Applied Mathematics and currently work as a <span class="text-slate-900 font-semibold dark:font-normal dark:text-amber-200">Data Scientist</span>. On this page, you can find the notes I made when I discovered something new in the fields of <span class="text-slate-900 font-semibold dark:font-normal dark:text-amber-200">Data Science</span> and <span class="text-slate-900 font-semibold dark:font-normal dark:text-amber-200">Web Development</span>.',
+    'I am a Vietnamese with a curious mind. I would like to learn something new every day. I also have a PhD in Applied Mathematics and currently work as a <span class=" font-normal text-amber-200">Data Scientist</span>. On this page, you can find the notes I made when I discovered something new in the fields of <span class=" font-normal text-amber-200">Data Science</span> and <span class=" font-normal text-amber-200">Web Development</span>.',
   longIntro:
-    'I am <span class="text-slate-900 font-semibold dark:font-normal dark:text-amber-200">Thi</span>, a Vietnamese <span class="text-slate-900 font-semibold dark:font-normal dark:text-amber-200">Data Scientist</span> with a curious mind. As an ever-learning worm, I am interested in researching and sharing content about <span class="text-slate-900 font-semibold dark:font-normal dark:text-amber-200">Applied Mathematics</span>, <span class="text-slate-900 font-semibold dark:font-normal dark:text-amber-200">Web Dev</span> and <span class="text-slate-900 font-semibold dark:font-normal dark:text-amber-200">Data Science</span>. I have a PhD in Applied Mathematics from U. Sorbonne Paris Nord and am an avid self-learner in Data Science.',
+    'I am <span class="font-normal text-amber-200">Thi</span>, a Vietnamese <span class=" font-normal text-amber-200">Data Scientist</span> with a curious mind. As an ever-learning worm, I am interested in researching and sharing content about <span class=" font-normal text-amber-200">Applied Mathematics</span>, <span class=" font-normal text-amber-200">Web Dev</span> and <span class=" font-normal text-amber-200">Data Science</span>. I have a PhD in Applied Mathematics from U. Sorbonne Paris Nord and am an avid self-learner in Data Science.',
   lookingForJob: false,
 }
 
@@ -41,7 +41,7 @@ export const socials: SocialBadge[] = [
     title: 'Github',
     icon: GithubIcon,
     url: 'https://github.com/dinhanhthi',
-    imgClass: 'dark:invert',
+    imgClass: 'invert',
   },
   {
     id: 'linkedin',
@@ -87,11 +87,9 @@ export const inforLinks: InfoBadge[] = [
     url: `mailto:${author.email}`,
     title: 'Contact',
     external: true,
-    customClasses: cntl`
-      bg-sky-100 px-7 font-semibold md:shadow-sky-100 dark:font-normal
-      hover:bg-sky-200 dark:bg-sky-600 border-none dark:hover:bg-sky-700
-      text-sky-700
-    `,
+    className: cntl`
+      px-7 md:shadow-sky-100 font-normal bg-sky-600 border-none hover:bg-sky-700
+      text-white`,
     targetSelf: true,
   },
   {

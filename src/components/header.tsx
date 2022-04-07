@@ -1,6 +1,5 @@
 import * as React from 'react'
 import parse from 'html-react-parser'
-import cntl from 'cntl'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 import { HeaderOptions, HeaderTypes } from '../types/types'
@@ -25,9 +24,7 @@ export default function Header({
   type?: HeaderTypes
   options?: HeaderOptions
 }) {
-  const headerDefaultClass = cntl`
-    dark:bg-gradient-to-b dark:from-bg-main-dark to-bg-nav-dark
-  `
+  const headerDefaultClass = 'bg-gradient-to-b from-bg-main-dark to-bg-nav-dark'
 
   return (
     <header
@@ -87,7 +84,7 @@ function headerBlog(options?: HeaderOptions) {
         <div className="border-1 mt-3 border-b px-4 pb-2 text-center dark:border-stone-500">
           {options.pageTags.map(tag => (
             <Link
-              className="thi-link mr-2"
+              className="thi-link-always-dark mr-2"
               key={tag}
               to={`/tag/${slugify(tag)}/`}
             >
@@ -97,12 +94,12 @@ function headerBlog(options?: HeaderOptions) {
         </div>
       )}
       {options.pageDate && (
-        <div className="mt-1 pt-2 text-center italic">
+        <div className="mt-1 pt-2 text-center italic text-main-dark">
           <span className="mr-1">
             Last modified {getLastModified(options.pageDate)}
           </span>
           /
-          <a className="thi-link ml-1" href={options.editLink}>
+          <a className="thi-link-always-dark ml-1" href={options.editLink}>
             Edit on Github
           </a>
         </div>
@@ -143,20 +140,18 @@ function headerAbout(options?: HeaderOptions) {
               {options.pageTitle}
             </h1>
           )}
-          <p className={'thi-text-color mt-4 flex-1 text-left'}>
+          <p className={'mt-4 flex-1 text-left text-main-dark'}>
             {parse(author.longIntro)}
           </p>
         </div>
-        <div className="w-full rounded-lg border border-slate-300 p-4 dark:border-slate-600 md:w-auto">
+        <div className="w-full rounded-lg border border-slate-600 p-4 md:w-auto">
           <ul>
             {Object.keys(coordinate).map(key => (
               <li key={key}>
-                <span className="mr-3 font-semibold capitalize text-sky-700 dark:text-sky-300">
+                <span className="mr-3 font-semibold capitalize text-sky-300">
                   {key}
                 </span>
-                <span className="text-slate-700 dark:text-slate-200">
-                  {coordinate[key]}
-                </span>
+                <span className="text-slate-200">{coordinate[key]}</span>
               </li>
             ))}
           </ul>
@@ -209,7 +204,7 @@ function headerIndex(options?: HeaderOptions) {
           </h1>
         )}
         <p
-          className={`max-w-full ${ySpacingClass} thi-text-color text-center md:text-left`}
+          className={`max-w-full ${ySpacingClass} text-center text-main-dark md:text-left`}
         >
           {parse(author.shortIntro)}
         </p>

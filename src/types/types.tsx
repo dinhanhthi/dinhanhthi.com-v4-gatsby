@@ -49,7 +49,7 @@ export type InfoBadge = {
   title: string
   external?: boolean
   icon?: any
-  customClasses?: string
+  className?: string
   targetSelf?: boolean
 }
 

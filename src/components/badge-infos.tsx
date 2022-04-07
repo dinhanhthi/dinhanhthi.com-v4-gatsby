@@ -4,11 +4,9 @@ import { InfoBadge } from '../types/types'
 
 export default function BadgeInfos({ options }: { options: InfoBadge }) {
   const aLinkClass = `
-    block py-2.5 bg-transparent thi-text-color rounded-3xl border-slate-100
-    dark:border-gray-600 text-sm uppercase font-bold tracking-widest${
-      options?.customClasses
-        ? ` ${options.customClasses}`
-        : ' px-5 hover:bg-gray-100 dark:hover:bg-gray-700'
+    block py-2.5 bg-transparent text-main-dark rounded-3xl border-gray-600 text-sm
+    uppercase font-bold tracking-widest${
+      options?.className ? ` ${options.className}` : ' px-5 hover:bg-gray-700'
     } transition duration-300 shadow-md md:shadow-none`
 
   if (options.external || options.url.includes('//')) {

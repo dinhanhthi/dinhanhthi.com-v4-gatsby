@@ -17,7 +17,12 @@ export default function AboutPage() {
   const sectionSpacing = 'pt-12'
 
   return (
-    <Base headerType="about" headerOptions={headerOptions}>
+    <Base
+      headerType="about"
+      headerOptions={headerOptions}
+      className="thi-bg-stone"
+      splitBgStone={true}
+    >
       <div className={'container mx-auto py-4 px-3'}>
         <div className={'flex flex-wrap gap-4'}>
           {Skills.map((skill: any) => (
