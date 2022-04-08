@@ -1,111 +1,7 @@
-$code-font-size: 1rem;
 
-$prism-bg: #2f3240;
-$prism-bg-light: #f7f7f7;
-$prism-color: #eee;
-$prism-color-light: #525252;
-$prism-border: #3b3e54;
-$prism-border-light: #e4e2e2;
-$prism-line-number-border: #666;
-$prism-line-number-border-light: #bbb;
-$prism-selection: #75a7ca;
-$prism-selection-light: #b3d4fc;
-$prism-highlight-line-bg: #454545cc;
-$prism-highlight-line-bg-light: #dfdfdf;
-$prism-highlight-line-add-bg: #0d6c163d;
-$prism-highlight-line-add-bg-light: #00c7134f;
-$prism-highlight-line-remove-bg: #7039395e;
-$prism-highlight-line-remove-bg-light: #ff9f9f94;
-
-$prism-token-doctype: #9cdcfe;
-$prism-token-doctype-light: slategray;
-$prism-token-doctype-tag: #90cdff;
-$prism-token-doctype-tag-light: green;
-$prism-token-comment: #6a9955;
-$prism-token-comment-light: #007979;
-$prism-token-number: #b5cea8;
-$prism-token-number-light: #b854f6;
-$prism-token-string: #ce9178;
-$prism-token-string-light: #ca4f0e;
-$prism-token-function: #efefac;
-$prism-token-function-light: #2e68fc;
-$prism-token-class-name: #4ec9b0;
-$prism-token-class-name-light: #3b8fce;
-$prism-token-variable: $prism-token-doctype;
-$prism-token-variable-light: #905;
-$prism-token-selector: #d7ba7d;
-$prism-token-selector-light: #690;
-$prism-token-cdata: #808080;
-$prism-token-cdata-light: slategray;
-$prism-token-regex: #d16969;
-$prism-token-regex-light: #e90;
-$prism-token-rule: #c586c0;
-$prism-token-rule-light: #c7254e;
-$prism-token-attr-name: #9cdcfe;
-$prism-token-attr-name-light: #007cbe;
-$prism-token-parameter: #9cdcfe;
-$prism-token-parameter-light: #b61bb6;
-$prism-token-constant: #c5acfa;
-$prism-token-constant-light: #4f1fb6;
-
-@mixin dark-vars() {
-  --prism-bg: #{$prism-bg};
-  --prism-color: #{$prism-color};
-  --prism-border: #{$prism-border};
-  --prism-line-number-border: #{$prism-line-number-border};
-  --prism-selection: #{$prism-selection};
-  --prism-token-doctype: #{$prism-token-doctype};
-  --prism-token-doctype-tag: #{$prism-token-doctype-tag};
-  --prism-token-comment: #{$prism-token-comment};
-  --prism-token-number: #{$prism-token-number};
-  --prism-token-string: #{$prism-token-string};
-  --prism-token-function: #{$prism-token-function};
-  --prism-token-class-name: #{$prism-token-class-name};
-  --prism-token-variable: #{$prism-token-variable};
-  --prism-token-selector: #{$prism-token-selector};
-  --prism-token-cdata: #{$prism-token-cdata};
-  --prism-token-regex: #{$prism-token-regex};
-  --prism-token-rule: #{$prism-token-rule};
-  --prism-token-attr-name: #{$prism-token-attr-name};
-  --prism-token-parameter: #{$prism-token-parameter};
-  --prism-token-constant: #{$prism-token-constant};
-  --prism-highlight-line-bg: #{$prism-highlight-line-bg};
-  --prism-highlight-line-add-bg: #{$prism-highlight-line-add-bg};
-  --prism-highlight-line-remove-bg: #{$prism-highlight-line-remove-bg};
-}
-
-@mixin light-vars() {
-  --prism-bg: #{$prism-bg-light};
-  --prism-color: #{$prism-color-light};
-  --prism-border: #{$prism-border-light};
-  --prism-line-number-border: #{$prism-line-number-border-light};
-  --prism-selection: #{$prism-selection-light};
-  --prism-token-doctype: #{$prism-token-doctype-light};
-  --prism-token-doctype-tag: #{$prism-token-doctype-tag-light};
-  --prism-token-comment: #{$prism-token-comment-light};
-  --prism-token-number: #{$prism-token-number-light};
-  --prism-token-string: #{$prism-token-string-light};
-  --prism-token-function: #{$prism-token-function-light};
-  --prism-token-class-name: #{$prism-token-class-name-light};
-  --prism-token-variable: #{$prism-token-variable-light};
-  --prism-token-selector: #{$prism-token-selector-light};
-  --prism-token-cdata: #{$prism-token-cdata-light};
-  --prism-token-regex: #{$prism-token-regex-light};
-  --prism-token-rule: #{$prism-token-rule-light};
-  --prism-token-attr-name: #{$prism-token-attr-name-light};
-  --prism-token-parameter: #{$prism-token-parameter-light};
-  --prism-token-constant: #{$prism-token-constant-light};
-  --prism-highlight-line-bg: #{$prism-highlight-line-bg-light};
-  --prism-highlight-line-add-bg: #{$prism-highlight-line-add-bg-light};
-  --prism-highlight-line-remove-bg: #{$prism-highlight-line-remove-bg-light};
-}
-
-body {
-  @include light-vars();
-  &.dark {
-    @include dark-vars();
-  }
-}
+/**
+  Main
+*/
 
 pre[class*='language-'],
 code[class*='language-'] {
@@ -144,27 +40,26 @@ code[class*='language-'] *::selection {
   }
 }
 
-// pre[class*="language-"] {
-// 	padding: 1em;
-// 	margin: .5em 0;
-// }
+pre[class*='language-'] {
+  padding: $pre-padding;
+}
 
-:not(pre) > code[class*='language-'] {
+:not(pre) > code[class*='language-'], :not(pre) > code {
   padding: 0.2em 0.3em;
   border-radius: 0.3em;
   color: #222;
-  // background: #f9f2f4;
 }
-/*********************************************************
+
+/**
 * Tokens
 */
+
 .namespace {
   opacity: 0.7;
 }
 
 .token.doctype .token.doctype-tag {
   color: var(--prism-token-doctype-tag);
-  // color: #569cd6; // backup
 }
 
 .token.doctype .token.name {
@@ -180,7 +75,6 @@ code[class*='language-'] *::selection {
 .language-html .language-css .token.punctuation,
 .language-html .language-javascript .token.punctuation {
   color: var(--prism-color);
-  // color: #d4d4d4; // backup
 }
 
 .token.property,
@@ -230,7 +124,6 @@ code[class*='language-'] *::selection {
 
 .token.atrule .token.url .token.function {
   color: var(--prism-token-function);
-  // color: #dcdcaa; // backup
 }
 
 .token.atrule .token.url .token.punctuation {
@@ -339,8 +232,9 @@ code[class*='language-'] *::selection {
 .token.namespace {
   color: var(--prism-token-class-name);
 }
-/*********************************************************
-* Language Specific
+
+/**
+  Language Specific
 */
 
 pre[class*='language-javascript'],
@@ -371,31 +265,21 @@ code[class*='language-html'] {
 .language-html .token.punctuation {
   color: var(--prism-token-cdata);
 }
-/*********************************************************
-* Line highlighting
+
+/**
+  Line highlighting
 */
-pre[data-line] {
-  position: relative;
-}
 
-pre[class*='language-'] > code[class*='language-'] {
-  position: relative;
-  z-index: 1;
+$pre-padding-highlight: $pre-padding;
+.gatsby-highlight-code-line {
+  background-color: var(--prism-highlight-line-bg);
+  display: block;
+  line-height: 1.5;
+  margin-left: -$pre-padding-highlight;
+  margin-right: -$pre-padding-highlight;
+  padding-left: $pre-padding-highlight;
+  padding-right: $pre-padding-highlight;
 }
-
-.line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: inherit 0;
-  margin-top: 1em;
-  background: #f7ebc6;
-  z-index: 0;
-  pointer-events: none;
-  line-height: inherit;
-  white-space: pre;
-}
-
 
 /**
   For line-numbers
@@ -405,8 +289,8 @@ pre[class*='language-'] > code[class*='language-'] {
 */
 
 .line-numbers .line-numbers-rows {
-  top: 1.15em;
-  padding-left: 1em;
+  top: $pre-padding + 0.25em;
+  padding-left: $pre-padding;
   line-height: 1.57;
   font-size: 95%;
   border-color: var(--prism-line-number-border);
@@ -421,5 +305,5 @@ pre[class*='language-'] > code[class*='language-'] {
 }
 
 /**
-  End line-numbers
+  End of line-numbers
 */

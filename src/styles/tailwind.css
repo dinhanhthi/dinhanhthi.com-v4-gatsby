@@ -107,7 +107,7 @@
   }
 
   .thi-prose-pre {
-    @apply prose-pre:border-[0.5px] prose-pre:thi-prose-code-bg
+    @apply prose-pre:thi-prose-code-bg
     prose-pre:!font-mono prose-pre:prose-code:before:content-none prose-pre:dark:border-dark-border
     prose-pre:dark:bg-code-dark-bg;
   }

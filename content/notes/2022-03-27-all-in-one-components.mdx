@@ -33,10 +33,21 @@ Thu nghiem `inline-code` xem the nao.
 
 ### Code block
 
+Simple (not that, highlight a single line with a comment <code>// highlight-line</code> (using `#` instead of `//` for python) at the line you wanna highlight),
+
+````
 ```python
 a = (1, 2, 3) # tuple
-x = list(a)
+x = list(a) # highlight-line
 ```
+````
+
+```python
+a = (1, 2, 3) # tuple
+x = list(a) # highlight-line
+```
+
+With numbering,
 
 ```javascript{numberLines: true}
 // In your gatsby-config.js
@@ -52,7 +63,33 @@ plugins: [
 ]
 ```
 
-```javascript{numberLines: 5}
+A long script,
+
+```javascript{numberLines: true}
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`, // highlight-line
+      ]
+    }
+  }
+]
+
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+
 // In your gatsby-config.js
 plugins: [
   {
@@ -66,7 +103,41 @@ plugins: [
 ]
 ```
 
+Numbering starts at 5 and there is a very long line,
+
+```javascript{numberLines: 5}
+// In your gatsby-config.js
+plugins: [
+  {
+    // Try with a very long line, with a very long line, with a very long line, with a very long line,
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+```
+
+With highlighted lines,
+
 ```javascript{1,4-6}
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+```
+
+Combine highlighted lines and numbering,
+
+```javascript{1,4-6}{numberLines: true}
 plugins: [
   {
     resolve: `gatsby-transformer-remark`,
