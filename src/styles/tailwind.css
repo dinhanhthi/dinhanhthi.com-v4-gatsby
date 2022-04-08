@@ -9,19 +9,17 @@
 }
 
 @layer utilities {
-  @variants responsive {
-    .text-shadow {
-      text-shadow: 2px 2px 4px black;
-    }
-    .text-shadow-md {
-      text-shadow: 4px 4px 8px black;
-    }
-    .text-shadow-lg {
-      text-shadow: 15px 15px 30px black;
-    }
-    .text-shadow-none {
-      text-shadow: none;
-    }
+  .text-shadow {
+    text-shadow: 2px 2px 4px black;
+  }
+  .text-shadow-md {
+    text-shadow: 4px 4px 8px black;
+  }
+  .text-shadow-lg {
+    text-shadow: 15px 15px 30px black;
+  }
+  .text-shadow-none {
+    text-shadow: none;
   }
 }
 
@@ -30,7 +28,10 @@
     @apply bg-white dark:bg-main-dark-bg;
   }
 
-  /* Don't forget to change manually for "wave-stone" and "wave-footer-stone" classes in tailwind.config.js */
+  /*
+  Don't forget to change manually for "wave-stone" and "wave-footer-stone"
+  classes in tailwind.config.js
+  */
   .thi-bg-stone {
     @apply bg-stone-100;
   }
@@ -77,27 +78,42 @@
     @apply font-heading text-3xl font-semibold text-main-dark;
   }
 
-  /* thi-prose */
+  /**
+    thi-prose
+    Reamark: There are styles in src/styles/_prism-vscode.scss
+  */
   .thi-prose-code-dark {
     @apply prose-code:dark:text-shadow-none prose-code:dark:bg-code-dark-bg
     prose-code:dark:text-white;
   }
 
+  .thi-prose-code-bg {
+    @apply bg-stone-100;
+  }
+
   .thi-prose-code-main {
-    @apply prose-code:!font-mono prose-code:!text-sm prose-code:font-normal
-    prose-code:before:pl-1 prose-code:before:content-[''] prose-code:after:pr-1
-    prose-code:after:content-[''];
+    @apply prose-code:thi-prose-code-bg prose-code:!font-mono prose-code:!text-sm
+    prose-code:font-normal prose-code:before:content-none prose-code:after:content-none
+    prose-code:text-stone-900;
   }
 
   .thi-prose-code-heading {
-    @apply prose-code:prose-h2:!text-xl prose-code:prose-h3:!text-lg prose-code:prose-h4:!text-base;
+    @apply prose-code:prose-h2:!text-xl prose-code:prose-h3:!text-lg
+    prose-code:prose-h4:!text-base;
   }
 
   .thi-prose-code {
     @apply thi-prose-code-dark thi-prose-code-main thi-prose-code-heading;
   }
 
+  .thi-prose-pre {
+    @apply prose-pre:border-[0.5px] prose-pre:thi-prose-code-bg
+    prose-pre:!font-mono prose-pre:prose-code:before:content-none prose-pre:dark:border-dark-border
+    prose-pre:dark:bg-code-dark-bg;
+  }
+
   .thi-prose {
-    @apply thi-prose-code prose prose-strong:font-medium dark:prose-invert;
+    @apply thi-prose-code thi-prose-pre prose prose-strong:font-medium
+    dark:prose-invert;
   }
 }

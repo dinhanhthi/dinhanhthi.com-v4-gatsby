@@ -6,5 +6,4 @@ import './src/styles/tailwind.css'
 import 'tippy.js/dist/tippy.css' // tooltip
 // import 'tippy.js/themes/light.css' // tooltip light theme
 
-// Highlighting for code blocks
-import 'prismjs/themes/prism.css'
+require('prismjs/plugins/line-numbers/prism-line-numbers.css')

@@ -1,0 +1,425 @@
+$code-font-size: 1rem;
+
+$prism-bg: #2f3240;
+$prism-bg-light: #f7f7f7;
+$prism-color: #eee;
+$prism-color-light: #525252;
+$prism-border: #3b3e54;
+$prism-border-light: #e4e2e2;
+$prism-line-number-border: #666;
+$prism-line-number-border-light: #bbb;
+$prism-selection: #75a7ca;
+$prism-selection-light: #b3d4fc;
+$prism-highlight-line-bg: #454545cc;
+$prism-highlight-line-bg-light: #dfdfdf;
+$prism-highlight-line-add-bg: #0d6c163d;
+$prism-highlight-line-add-bg-light: #00c7134f;
+$prism-highlight-line-remove-bg: #7039395e;
+$prism-highlight-line-remove-bg-light: #ff9f9f94;
+
+$prism-token-doctype: #9cdcfe;
+$prism-token-doctype-light: slategray;
+$prism-token-doctype-tag: #90cdff;
+$prism-token-doctype-tag-light: green;
+$prism-token-comment: #6a9955;
+$prism-token-comment-light: #007979;
+$prism-token-number: #b5cea8;
+$prism-token-number-light: #b854f6;
+$prism-token-string: #ce9178;
+$prism-token-string-light: #ca4f0e;
+$prism-token-function: #efefac;
+$prism-token-function-light: #2e68fc;
+$prism-token-class-name: #4ec9b0;
+$prism-token-class-name-light: #3b8fce;
+$prism-token-variable: $prism-token-doctype;
+$prism-token-variable-light: #905;
+$prism-token-selector: #d7ba7d;
+$prism-token-selector-light: #690;
+$prism-token-cdata: #808080;
+$prism-token-cdata-light: slategray;
+$prism-token-regex: #d16969;
+$prism-token-regex-light: #e90;
+$prism-token-rule: #c586c0;
+$prism-token-rule-light: #c7254e;
+$prism-token-attr-name: #9cdcfe;
+$prism-token-attr-name-light: #007cbe;
+$prism-token-parameter: #9cdcfe;
+$prism-token-parameter-light: #b61bb6;
+$prism-token-constant: #c5acfa;
+$prism-token-constant-light: #4f1fb6;
+
+@mixin dark-vars() {
+  --prism-bg: #{$prism-bg};
+  --prism-color: #{$prism-color};
+  --prism-border: #{$prism-border};
+  --prism-line-number-border: #{$prism-line-number-border};
+  --prism-selection: #{$prism-selection};
+  --prism-token-doctype: #{$prism-token-doctype};
+  --prism-token-doctype-tag: #{$prism-token-doctype-tag};
+  --prism-token-comment: #{$prism-token-comment};
+  --prism-token-number: #{$prism-token-number};
+  --prism-token-string: #{$prism-token-string};
+  --prism-token-function: #{$prism-token-function};
+  --prism-token-class-name: #{$prism-token-class-name};
+  --prism-token-variable: #{$prism-token-variable};
+  --prism-token-selector: #{$prism-token-selector};
+  --prism-token-cdata: #{$prism-token-cdata};
+  --prism-token-regex: #{$prism-token-regex};
+  --prism-token-rule: #{$prism-token-rule};
+  --prism-token-attr-name: #{$prism-token-attr-name};
+  --prism-token-parameter: #{$prism-token-parameter};
+  --prism-token-constant: #{$prism-token-constant};
+  --prism-highlight-line-bg: #{$prism-highlight-line-bg};
+  --prism-highlight-line-add-bg: #{$prism-highlight-line-add-bg};
+  --prism-highlight-line-remove-bg: #{$prism-highlight-line-remove-bg};
+}
+
+@mixin light-vars() {
+  --prism-bg: #{$prism-bg-light};
+  --prism-color: #{$prism-color-light};
+  --prism-border: #{$prism-border-light};
+  --prism-line-number-border: #{$prism-line-number-border-light};
+  --prism-selection: #{$prism-selection-light};
+  --prism-token-doctype: #{$prism-token-doctype-light};
+  --prism-token-doctype-tag: #{$prism-token-doctype-tag-light};
+  --prism-token-comment: #{$prism-token-comment-light};
+  --prism-token-number: #{$prism-token-number-light};
+  --prism-token-string: #{$prism-token-string-light};
+  --prism-token-function: #{$prism-token-function-light};
+  --prism-token-class-name: #{$prism-token-class-name-light};
+  --prism-token-variable: #{$prism-token-variable-light};
+  --prism-token-selector: #{$prism-token-selector-light};
+  --prism-token-cdata: #{$prism-token-cdata-light};
+  --prism-token-regex: #{$prism-token-regex-light};
+  --prism-token-rule: #{$prism-token-rule-light};
+  --prism-token-attr-name: #{$prism-token-attr-name-light};
+  --prism-token-parameter: #{$prism-token-parameter-light};
+  --prism-token-constant: #{$prism-token-constant-light};
+  --prism-highlight-line-bg: #{$prism-highlight-line-bg-light};
+  --prism-highlight-line-add-bg: #{$prism-highlight-line-add-bg-light};
+  --prism-highlight-line-remove-bg: #{$prism-highlight-line-remove-bg-light};
+}
+
+body {
+  @include light-vars();
+  &.dark {
+    @include dark-vars();
+  }
+}
+
+pre[class*='language-'],
+code[class*='language-'] {
+  color: var(--prism-color);
+  font-size: $code-font-size;
+  text-shadow: none;
+  font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono',
+    'Courier New', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*='language-']::selection,
+code[class*='language-']::selection,
+pre[class*='language-'] *::selection,
+code[class*='language-'] *::selection {
+  text-shadow: none;
+  background: var(--prism-selection);
+}
+
+@media print {
+  pre[class*='language-'],
+  code[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
+// pre[class*="language-"] {
+// 	padding: 1em;
+// 	margin: .5em 0;
+// }
+
+:not(pre) > code[class*='language-'] {
+  padding: 0.2em 0.3em;
+  border-radius: 0.3em;
+  color: #222;
+  // background: #f9f2f4;
+}
+/*********************************************************
+* Tokens
+*/
+.namespace {
+  opacity: 0.7;
+}
+
+.token.doctype .token.doctype-tag {
+  color: var(--prism-token-doctype-tag);
+  // color: #569cd6; // backup
+}
+
+.token.doctype .token.name {
+  color: var(--prism-token-doctype);
+}
+
+.token.comment,
+.token.prolog {
+  color: var(--prism-token-comment);
+}
+
+.token.punctuation,
+.language-html .language-css .token.punctuation,
+.language-html .language-javascript .token.punctuation {
+  color: var(--prism-color);
+  // color: #d4d4d4; // backup
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.inserted,
+.token.unit {
+  color: var(--prism-token-number);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.deleted {
+  color: var(--prism-token-string);
+}
+
+.language-css .token.string.url {
+  text-decoration: underline;
+}
+
+.token.operator,
+.token.entity {
+  color: var(--prism-color);
+}
+
+.token.operator.arrow {
+  color: var(--prism-token-doctype-tag);
+}
+
+.token.atrule {
+  color: var(--prism-token-string);
+}
+
+.token.atrule .token.rule {
+  color: var(--prism-token-rule);
+}
+
+.token.atrule .token.url {
+  color: var(--prism-token-doctype);
+}
+
+.token.atrule .token.url .token.function {
+  color: var(--prism-token-function);
+  // color: #dcdcaa; // backup
+}
+
+.token.atrule .token.url .token.punctuation {
+  color: var(--prism-color);
+}
+
+.token.keyword {
+  color: var(--prism-token-doctype-tag);
+}
+
+.token.keyword.module,
+.token.keyword.control-flow {
+  color: var(--prism-token-rule);
+}
+
+.token.function,
+.token.function .token.maybe-class-name {
+  color: var(--prism-token-function);
+}
+
+.token.regex {
+  color: var(--prism-token-regex);
+}
+
+.token.important {
+  color: var(--prism-token-doctype-tag);
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.constant {
+  color: var(--prism-token-constant);
+}
+
+.token.class-name,
+.token.maybe-class-name {
+  color: var(--prism-token-class-name);
+}
+
+.token.console {
+  color: var(--prism-token-doctype);
+}
+
+.token.parameter {
+  color: var(--prism-token-parameter);
+}
+
+.token.interpolation {
+  color: var(--prism-token-doctype);
+}
+
+.token.punctuation.interpolation-punctuation {
+  color: var(--prism-token-doctype-tag);
+}
+
+.token.boolean {
+  color: var(--prism-token-doctype-tag);
+}
+
+.token.property,
+.token.variable,
+.token.imports .token.maybe-class-name,
+.token.exports .token.maybe-class-name {
+  color: var(--prism-token-variable);
+}
+
+.token.selector {
+  color: var(--prism-token-selector);
+}
+
+.token.escape {
+  color: var(--prism-token-selector);
+}
+
+.token.tag {
+  color: var(--prism-token-doctype-tag);
+}
+
+.token.tag .token.punctuation {
+  color: var(--prism-token-cdata);
+}
+
+.token.cdata {
+  color: var(--prism-token-cdata);
+}
+
+.token.attr-name {
+  color: var(--prism-token-attr-name);
+}
+
+.token.attr-value,
+.token.attr-value .token.punctuation {
+  color: var(--prism-token-string);
+}
+
+.token.attr-value .token.punctuation.attr-equals {
+  color: var(--prism-color);
+}
+
+.token.entity {
+  color: var(--prism-token-doctype-tag);
+}
+
+.token.namespace {
+  color: var(--prism-token-class-name);
+}
+/*********************************************************
+* Language Specific
+*/
+
+pre[class*='language-javascript'],
+code[class*='language-javascript'],
+pre[class*='language-jsx'],
+code[class*='language-jsx'],
+pre[class*='language-typescript'],
+code[class*='language-typescript'],
+pre[class*='language-tsx'],
+code[class*='language-tsx'] {
+  color: var(--prism-token-doctype);
+}
+
+pre[class*='language-css'],
+code[class*='language-css'] {
+  color: var(--prism-token-string);
+}
+
+pre[class*='language-html'],
+code[class*='language-html'] {
+  color: var(--prism-color);
+}
+
+.language-regex .token.anchor {
+  color: var(--prism-token-function);
+}
+
+.language-html .token.punctuation {
+  color: var(--prism-token-cdata);
+}
+/*********************************************************
+* Line highlighting
+*/
+pre[data-line] {
+  position: relative;
+}
+
+pre[class*='language-'] > code[class*='language-'] {
+  position: relative;
+  z-index: 1;
+}
+
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: #f7ebc6;
+  z-index: 0;
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+
+/**
+  For line-numbers
+  Remark: The main css is in file
+  prismjs/plugins/line-numbers/prism-line-numbers.css
+  (check gatsby-browser.js)
+*/
+
+.line-numbers .line-numbers-rows {
+  top: 1.15em;
+  padding-left: 1em;
+  line-height: 1.57;
+  font-size: 95%;
+  border-color: var(--prism-line-number-border);
+
+  span {
+    text-align: center;
+    &::before {
+      padding-right: 0.8em;
+      text-align: center;
+    }
+  }
+}
+
+/**
+  End line-numbers
+*/
