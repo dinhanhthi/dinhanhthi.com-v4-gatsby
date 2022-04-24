@@ -8,12 +8,12 @@ module.exports = {
     description: 'I failed my way to success!',
     siteUrl: 'https://dinhanhthi.com/',
     social: {
-      twitter: 'kylemathews',
+      twitter: 'dinhanhthi',
     },
   },
   plugins: [
     'gatsby-plugin-postcss',
-    'gatsby-plugin-image',
+    // 'gatsby-plugin-image',
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
@@ -43,6 +43,9 @@ module.exports = {
         path: './src/data/',
       },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-remark-images',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -50,12 +53,6 @@ module.exports = {
         remarkPlugins: [require('remark-math')],
         rehypePlugins: [[require('rehype-katex'), { strict: 'ignore' }]],
         gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 630,
-            },
-          },
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {
@@ -75,11 +72,21 @@ module.exports = {
           },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
+          'gatsby-remark-component',
+          'gatsby-remark-unwrap-images',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 900,
+              linkImagesToOriginal: false,
+              showCaptions: ['title', 'alt'],
+              // markdownCaptions: true,
+              loading: 'lazy',
+            },
+          },
         ],
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-feed',
       options: {

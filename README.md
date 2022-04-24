@@ -82,9 +82,51 @@ createNodeField({
 })
 ```
 
----
+### KaTeX
 
 How to install **KaTeX** with new version of Gatsby? The versions are important. If you are using Gatbsy v4, [follow this](https://github.com/gatsbyjs/gatsby/issues/21866#issuecomment-1063668178).
+
+
+### `gatsby-remark-images` problems with `mdx`
+
+Things in `gatsby-config.js` (The order is important, I don't know why!).
+
+```js
+module.exports = {
+  plugins: [
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-remark-images',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        gatsbyRemarkPlugins: [
+          'gatsby-remark-unwrap-images', // We need this to overcome the err <figcaption> cannot inside <p>
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 900, // Tip to get by default 100% width of the container
+              linkImagesToOriginal: false,
+              showCaptions: ['title', 'alt'],
+              // markdownCaptions: true, // if "true" => parsing error, I don't know why???
+              loading: 'lazy',
+            },
+          },
+        ]
+      }
+    }
+  ]
+}
+```
+
+```
+# Alt as caption
+![Example image description](./img/home.jpg)
+
+# Title as caption
+![Example image description](./img/home.jpg "This is the caption.")
+```
+
 
 ## Tailwind things
 
