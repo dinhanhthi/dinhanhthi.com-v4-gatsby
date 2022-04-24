@@ -84,6 +84,7 @@ createNodeField({
 
 ---
 
+How to install **KaTeX** with new version of Gatsby? The versions are important. If you are using Gatbsy v4, [follow this](https://github.com/gatsbyjs/gatsby/issues/21866#issuecomment-1063668178).
 
 ## Tailwind things
 
