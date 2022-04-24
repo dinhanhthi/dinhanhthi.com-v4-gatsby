@@ -1,8 +1,8 @@
-# dinhanhthi.com-v5
+# dinhanhthi.com-v
 
-Version 5 of dinhanhthi.com using GatbsyJS &amp; TailwindCSS.
+Version 5 of dinhanhthi.com using GatbsyJS & TailwindCSS.
 
-```bash
+```
 gatsby develop # or `npm run dev`
 # http://localhost:5555/
 # http://localhost:5555/___graphql
@@ -89,7 +89,14 @@ How to install **KaTeX** with new version of Gatsby? The versions are important.
 
 ### `gatsby-remark-images` problems with `mdx`
 
-Things in `gatsby-config.js` (The order is important, I don't know why!).
+❗ **Before continuing**: If we wanna use markdown in caption of the image (bold text, link,...), we have to disable `showCaptions` in the below option and customize the css rule.
+
+```
+![Alt that will be used as caption.](./img/home.jpg)
+_This is a caption with **bold text** and `code`._
+```
+
+**If we don't use markdown inside caption**: Things in `gatsby-config.js` (The order is important, I don't know why!).
 
 ```js
 module.exports = {

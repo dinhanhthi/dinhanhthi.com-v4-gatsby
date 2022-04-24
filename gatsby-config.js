@@ -79,7 +79,7 @@ module.exports = {
             options: {
               maxWidth: 900,
               linkImagesToOriginal: false,
-              showCaptions: ['title', 'alt'],
+              // showCaptions: ['title', 'alt'], // To add caption manually
               // markdownCaptions: true,
               loading: 'lazy',
             },

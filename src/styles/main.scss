@@ -32,3 +32,17 @@ body {
 ::-webkit-scrollbar-corner {
   background: var(--color-background);
 }
+
+/**
+  Image caption
+*/
+.gatsby-resp-image-wrapper + em {
+  padding: 5px;
+  font-size: 95%;
+  display: block;
+  font-style: normal;
+  text-align: center;
+  background-color: var(--fig-caption-bg);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

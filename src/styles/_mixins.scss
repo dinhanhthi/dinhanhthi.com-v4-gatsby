@@ -60,6 +60,9 @@ $prism-token-parameter-light: #b61bb6;
 $prism-token-constant: #c5acfa;
 $prism-token-constant-light: #4f1fb6;
 
+$fig-caption-bg-light: #ffedd5; // orange-100
+$fig-caption-bg: #305d7d; // orange-200
+
 /**
   For dark / light themes
 */
@@ -93,6 +96,7 @@ $prism-token-constant-light: #4f1fb6;
   --scroll-track: #{$scroll-track};
   --prism-code-title-bg: #{$prism-code-title-bg};
   --prism-code-title-color: #{$prism-code-title-color};
+  --fig-caption-bg: #{$fig-caption-bg};
 }
 
 @mixin light-vars() {
@@ -124,4 +128,5 @@ $prism-token-constant-light: #4f1fb6;
   --scroll-track: #{$scroll-track-light};
   --prism-code-title-bg: #{$prism-code-title-bg-light};
   --prism-code-title-color: #{$prism-code-title-color-light};
+  --fig-caption-bg: #{$fig-caption-bg-light};
 }
