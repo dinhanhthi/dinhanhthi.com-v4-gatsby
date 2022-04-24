@@ -18,12 +18,16 @@ $prism-line-number-border: #666;
 $prism-line-number-border-light: #bbb;
 $prism-selection: #75a7ca;
 $prism-selection-light: #b3d4fc;
-$prism-highlight-line-bg: #454545cc;
+$prism-highlight-line-bg: #8b8a6d69;
 $prism-highlight-line-bg-light: #dfdfdf;
 $prism-highlight-line-add-bg: #0d6c163d;
 $prism-highlight-line-add-bg-light: #00c7134f;
 $prism-highlight-line-remove-bg: #7039395e;
 $prism-highlight-line-remove-bg-light: #ff9f9f94;
+$prism-code-title-bg: #c6c6c6;
+$prism-code-title-bg-light: #545454;
+$prism-code-title-color: #100d0d;
+$prism-code-title-color-light: #fff;
 
 $prism-token-doctype: #9cdcfe;
 $prism-token-doctype-light: slategray;
@@ -87,6 +91,8 @@ $prism-token-constant-light: #4f1fb6;
   --scroll-thumb-bg: #{$scroll-thumb-bg};
   --scroll-thumb-bg-hover: #{$scroll-thumb-bg-hover};
   --scroll-track: #{$scroll-track};
+  --prism-code-title-bg: #{$prism-code-title-bg};
+  --prism-code-title-color: #{$prism-code-title-color};
 }
 
 @mixin light-vars() {
@@ -116,4 +122,6 @@ $prism-token-constant-light: #4f1fb6;
   --scroll-thumb-bg: #{$scroll-thumb-bg-light};
   --scroll-thumb-bg-hover: #{$scroll-thumb-bg-hover-light};
   --scroll-track: #{$scroll-track-light};
+  --prism-code-title-bg: #{$prism-code-title-bg-light};
+  --prism-code-title-color: #{$prism-code-title-color-light};
 }

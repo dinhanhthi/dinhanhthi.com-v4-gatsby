@@ -66,6 +66,10 @@ module.exports = {
             },
           },
           {
+            // IMPORTANT: this must be ahead of other plugins that use code blocks
+            resolve: 'gatsby-remark-code-titles',
+          },
+          {
             // https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/
             resolve: 'gatsby-remark-prismjs',
             options: {

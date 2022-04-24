@@ -33,7 +33,7 @@ Thu nghiem `inline-code` xem the nao.
 
 ### Code block
 
-Simple (not that, highlight a single line with a comment <code>// highlight-line</code> (using `#` instead of `//` for python) at the line you wanna highlight),
+Simple (not that, highlight a single line with a comment <code>// highlight-line</code> at the line you wanna highlight),
 
 ````
 ```python
@@ -138,6 +138,25 @@ plugins: [
 Combine highlighted lines and numbering,
 
 ```javascript{1,4-6}{numberLines: true}
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+```
+
+With title?
+
+```js:title=example-file.js
+alert('how cool is this!');
+```
+
+```js:title=example-file.js {1,4-6}{numberLines: true}
 plugins: [
   {
     resolve: `gatsby-transformer-remark`,

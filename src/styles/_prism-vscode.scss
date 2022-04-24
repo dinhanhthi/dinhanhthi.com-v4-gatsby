@@ -294,6 +294,7 @@ $pre-padding-highlight: $pre-padding;
   line-height: 1.57;
   font-size: 95%;
   border-color: var(--prism-line-number-border);
+  border: none;
 
   span {
     text-align: center;
@@ -304,6 +305,32 @@ $pre-padding-highlight: $pre-padding;
   }
 }
 
+.has-highlighted-lines {
+  .line-numbers .line-numbers-rows {
+    top: 1em;
+    line-height: 1.5;
+  }
+}
+
 /**
   End of line-numbers
 */
+
+.gatsby-code-title {
+  padding: 3px 10px;
+  font-size: 85%;
+  background-color: var(--prism-code-title-bg);
+  color: var(--prism-code-title-color);
+  z-index: 0;
+
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+
+  & + .gatsby-highlight {
+    pre {
+      margin-top: 0;
+      border-top-left-radius: unset;
+      border-top-right-radius: unset;
+    }
+  }
+}
