@@ -1,5 +1,7 @@
 # dinhanhthi.com-v
 
+**UPDATE 01 May 2022**: I drop out this project because Gatbsy doesn't support flexibility for sizes, positions,... for images in markdown files. It's less flexibile than 11ty. I keep using 11ty for that reason.
+
 Version 5 of dinhanhthi.com using GatbsyJS & TailwindCSS.
 
 ```
