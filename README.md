@@ -1,8 +1,28 @@
-# dinhanhthi.com-v
+# dinhanhthi.com-v4 using Gatsby
 
-**UPDATE 01 May 2022**: I drop out this project because Gatbsy doesn't support flexibility for sizes, positions,... for images in markdown files. It's less flexibile than 11ty. I keep using 11ty for that reason.
+Version 4 of dinhanhthi.com using GatbsyJS & TailwindCSS.
 
-Version 5 of dinhanhthi.com using GatbsyJS & TailwindCSS.
+🚸 **UPDATE on May 01, 2022**: I DISCONTINUE THIS PROJECT because Gatbsy doesn't support flexibility for sizes, positions,... for images in markdown files (I know we can use mdx with a custom component but I'd rather use markdown syntax with additional customizations). It's less flexible than 11ty. For this reason, [I continue to use 11ty](https://github.com/dinhanhthi/dinhanhthi.com).
+
+👉 A [demo](https://626fcb2ca2fb4e32b5c41b28--quiet-yeot-93db0a.netlify.app/) of what I did.
+
+## It's not complete but useful anyway
+
+If you want to know how I migrate the styles from 11ty the [current version](https://github.com/dinhanhthi/dinhanhthi.com) to Gatsby.
+
+🎉 **What I've done so far**:
+
+- [x] Gatsby 4
+- [x] General layout, navigation with full buttons, search bar (search function isn't implemented yet).
+- [x] Dark / light mode.
+- [x] Fully integrated TailwindCSS + how to create custom classes, groups,....
+- [x] Page generation (without styles): custom page (about, index,...), categories, tags, single-post blog, single-post notes,...
+- [x] Integrated KaTeX for math equations.
+- [x] Code syntax highlighting.
+- [x] Eslint.
+- [x] Finish styling About page like [the actual version](https://dinhanhthi.com/about/).
+
+## Dev
 
 ```
 gatsby develop # or `npm run dev`
