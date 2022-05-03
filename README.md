@@ -4,7 +4,7 @@ Version 4 of dinhanhthi.com using GatbsyJS & TailwindCSS.
 
 🚸 **UPDATE on May 01, 2022**: I DISCONTINUE THIS PROJECT because Gatbsy doesn't support flexibility for sizes, positions,... for images in markdown files (I know we can use mdx with a custom component but I'd rather use markdown syntax with additional customizations). It's less flexible than 11ty. For this reason, [I continue to use 11ty](https://github.com/dinhanhthi/dinhanhthi.com).
 
-👉 A [demo](https://626fcb2ca2fb4e32b5c41b28--quiet-yeot-93db0a.netlify.app/) of what I did.
+👉 A [demo](https://dinhanhthi-com-v4-gatsby.netlify.app/) of what I did.
 
 ## It's not complete but useful anyway
 
