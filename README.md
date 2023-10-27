@@ -1,4 +1,4 @@
-# dinhanhthi.com-v4 using Gatsby
+# v4.dinhanhthi.com
 
 Version 4 of dinhanhthi.com using GatbsyJS & TailwindCSS.
 
